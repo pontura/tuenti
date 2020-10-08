@@ -1,0 +1,68 @@
+[
+	{	
+		"character":"Mentor",
+		"text:":"Tuenti no comienza como una telefonía móvil, seguro que no te imaginas que era Tuenti en 2006."
+	},
+	{	
+		"character":"Jugador",
+		"text:":"una telefonía fija?"
+	},
+	{	
+		"character":"Mentor",
+		"text:":"No, te doy unas opciones:",
+		"options":
+		[
+			{
+				"text":"Una red social"
+			},
+			{
+				"text":"Un sitio web para compartir vídeos",
+				"incorrect":
+				[
+					{
+						"character":"Mentor",
+						"text:":"No, Tuenti nace como una red social que en 2011 llegó a tener más visitantes en España que Facebook"
+					}
+				]
+			},
+			{
+				"text":"Una cafetería",
+				"incorrect":
+				[
+					{
+						"character":"Mentor",
+						"text:":"No, Tuenti nace como una red social que en 2011 llegó a tener más visitantes en España que Facebook"
+					}
+				]	
+			}				
+		]
+	},
+	{	
+		"character":"Mentor",
+		"text:":"Así es! Tuenti nace como una red social que en 2011 llegó a tener más visitantes en España que Facebook",
+	},
+	{	
+		"character":"Jugador",
+		"text:":"¿Y desde cuando son telefonía móvil 100% digital?"
+	},
+	{	
+		"character":"Mentor",
+		"text:":"Veo que algo ya sabes, en 2016 se acabó la era de red social."
+	},
+	{	
+		"character":"Mentor",
+		"text:":"Pero antes, en 2015 llegamos a Ecuador como telefonía móvil y desde entonces no paramos de crecer."
+	},
+	{	
+		"character":"Jugador",
+		"text:":"Y seguiremos creciendo!"
+	},
+	{	
+		"character":"Mentor",
+		"text:":"¡Así se habla! necesitamos personas como vos que conozcan Tuenti y hagan que todos tengan su Chip Tuenti."
+	},
+	{	
+		"character":"Mentor",
+		"text:":"Suficiente historia por ahora, sigamos con nuevos temas!"
+	},
+]
