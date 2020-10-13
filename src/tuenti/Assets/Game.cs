@@ -12,11 +12,9 @@ public class Game : MonoBehaviour
     void Awake()
     {
         if (!mInstance)  mInstance = this;
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        DontDestroyOnLoad(this);
+    }
+    public void GotoCursos()
+    {
+        Data.Instance.LoadLevel("Cursos");
     }
 }

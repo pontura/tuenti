@@ -8,6 +8,8 @@ public class Data : MonoBehaviour
 {
     static Data mInstance = null;
     [HideInInspector] public string newScene;
+    public DatabaseManager databaseManager;
+    public UserData userData;
 
     public static Data Instance
     {
@@ -33,5 +35,11 @@ public class Data : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+        databaseManager = GetComponent<DatabaseManager>();
+        userData = GetComponent<UserData>();
+    }
+    private void Start()
+    {
+        databaseManager.Init();
     }
 }

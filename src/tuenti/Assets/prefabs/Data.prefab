@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1077345351746277835}
   - component: {fileID: 1077345351746277834}
   - component: {fileID: 1291916320180982532}
+  - component: {fileID: 2887607743978202203}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -45,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newScene: 
+  databaseManager: {fileID: 1291916320180982532}
+  userData: {fileID: 2887607743978202203}
 --- !u!114 &1291916320180982532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,5 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6900a5c688bae45b2c749d7fd1b06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  all: []
-  allContent: []
+  allLoaded: 0
+  cursosData:
+    all: []
+  multiplechoiceData:
+    all: []
+--- !u!114 &2887607743978202203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077345351746277833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8402826bef9278e4fbe08e527fb62868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curso_active_id: 0
