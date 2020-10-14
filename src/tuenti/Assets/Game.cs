@@ -17,4 +17,8 @@ public class Game : MonoBehaviour
     {
         Data.Instance.LoadLevel("Cursos");
     }
+    public void GotoTests()
+    {
+        Data.Instance.LoadLevel("Tests");
+    }
 }

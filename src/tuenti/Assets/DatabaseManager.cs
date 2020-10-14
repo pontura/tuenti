@@ -175,4 +175,12 @@ public class DatabaseManager : MonoBehaviour
                 all.Add(data);
         return all;
     }
+    public List<AnswerData> GetTriviaByTest(int test_id)
+    {
+        List<AnswerData> all = new List<AnswerData>();
+        foreach (AnswerData data in answwersData.all)
+            if (data.test_id == test_id)
+                all.Add(data);
+        return all;
+    }
 }
