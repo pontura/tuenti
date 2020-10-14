@@ -150,6 +150,8 @@ MonoBehaviour:
     value: 0
     text: 
     order: 0
+  isOn: 0
+  background: {fileID: 4904742903417937825}
 --- !u!1 &9041733421850237182
 GameObject:
   m_ObjectHideFlags: 0

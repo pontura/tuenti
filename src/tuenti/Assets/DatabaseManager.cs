@@ -68,6 +68,12 @@ public class DatabaseManager : MonoBehaviour
         public int curso_id;
         public string text;
         public int order;
+        public types type;
+        public enum types
+        {
+            SINGLE,
+            MULTIPLE
+        }
     }
     [Serializable]
     public class AnswerData
