@@ -21,4 +21,8 @@ public class Game : MonoBehaviour
     {
         Data.Instance.LoadLevel("Tests");
     }
+    private void Start()
+    {
+        Data.Instance.GetComponent<Books>().CheckToAddBookToScene();
+    }
 }
