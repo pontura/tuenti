@@ -5,6 +5,9 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     static Game mInstance = null;
+    public Character character;
+    public MapManager mapManager;
+
     public static Game Instance
     {
         get        {   return mInstance; }
@@ -20,9 +23,5 @@ public class Game : MonoBehaviour
     public void GotoTests()
     {
         Data.Instance.LoadLevel("Tests");
-    }
-    private void Start()
-    {
-        Data.Instance.GetComponent<Books>().CheckToAddBookToScene();
     }
 }

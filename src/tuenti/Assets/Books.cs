@@ -25,6 +25,7 @@ public class Books : MonoBehaviour
     private void Start()
     {
         Events.GetBook += GetBook;
+        CheckToAddBookToScene();
     }
     private void OnDestroy()
     {
@@ -40,7 +41,7 @@ public class Books : MonoBehaviour
             id++;
         }
     }
-    public void CheckToAddBookToScene()
+    void CheckToAddBookToScene()
     {
         int level = Data.Instance.userData.level;
         foreach (BookData data in all)

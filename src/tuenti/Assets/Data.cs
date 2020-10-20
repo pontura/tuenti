@@ -10,7 +10,7 @@ public class Data : MonoBehaviour
     [HideInInspector] public string newScene;
     public DatabaseManager databaseManager;
     public UserData userData;
-
+    public TextsManager textsManager;
     public static Data Instance
     {
         get
