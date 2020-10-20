@@ -12,6 +12,8 @@ public class Data : MonoBehaviour
     public DatabaseManager databaseManager;
     public UserData userData;
     public TextsManager textsManager;
+    public UIBooks uiBooks;
+
     public static Data Instance
     {
         get

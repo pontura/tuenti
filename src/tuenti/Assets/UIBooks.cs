@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIMain : MonoBehaviour
+public class UIBooks : UIScrollItemsScreen
 {
     public Text booksField;
 
@@ -16,11 +16,7 @@ public class UIMain : MonoBehaviour
     {
         Events.GetBook -= GetBook;
     }
-    public void Cursos()
-    {
-        Data.Instance.LoadLevel("Cursos");
-    }
-    void GetBook(Books.BookData d)  { SetBooksGrabbed(); }
+    void GetBook(Books.BookData d) { SetBooksGrabbed(); }
     public void OpenBooks()
     {
         Data.Instance.uiBooks.OnInit();
@@ -29,5 +25,21 @@ public class UIMain : MonoBehaviour
     {
         int totalBooksGrabbed = Data.Instance.userData.GetTotalBooksGrabbed();
         booksField.text = "Libros (" + totalBooksGrabbed + ")";
+    }
+    public void OnInit()
+    {
+        Init();
+        Reset();
+        foreach (Books.BookData data in GetComponent<Books>().all)
+        {
+            BookButton newButton = (BookButton)AddItem();
+            newButton.OnInit(data);
+        }
+    }
+    public override void OnUIButtonClicked(UIButton uiButton) {
+
+        BookButton button = (BookButton)uiButton;
+        Events.ReadBook(button.data.id);
+        Close();
     }
 }
