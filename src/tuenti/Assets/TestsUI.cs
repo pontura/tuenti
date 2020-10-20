@@ -5,6 +5,8 @@ using UnityEngine;
 public class TestsUI : MonoBehaviour
 {
     int id;
+    public List<DatabaseManager.TestData> all;
+
     void Start()
     {
         Loop();
@@ -17,21 +19,25 @@ public class TestsUI : MonoBehaviour
     private void Loop()
     {
         if (Data.Instance.databaseManager.allLoaded)
+        {
+            all = Data.Instance.databaseManager.GetAllTestDataByCurso(Data.Instance.userData.curso_active_id);
             SetOn();
+        }
         else
             Invoke("Loop", 0.1f);
     }
     public void Next()
     {
         id++;
-        if (id > Data.Instance.databaseManager.testsData.all.Length - 1)
-            GotoGame();
+        if (id > all.Count - 1)
+            GetComponent<SummaryTests>().OnInit();
         else
             SetOn();
     }
     void SetOn()
     {
-        DatabaseManager.TestData data = Data.Instance.databaseManager.testsData.all[id];
+        
+        DatabaseManager.TestData data = all[id];
         GetComponent<TriviaUI>().OnInit(data);
     }
 }

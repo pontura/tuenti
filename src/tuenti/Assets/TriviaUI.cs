@@ -9,6 +9,8 @@ public class TriviaUI : UIScrollItemsScreen
     TestsUI testUI;
     DatabaseManager.TestData data;
     [HideInInspector] public List<UITriviaButton> all;
+    public int correctAnswers;
+
     private void Awake()
     {
         testUI = GetComponent<TestsUI>();
@@ -22,7 +24,6 @@ public class TriviaUI : UIScrollItemsScreen
         field.text = data.text;
         foreach (DatabaseManager.AnswerData d in Data.Instance.databaseManager.GetTriviaByTest(data.id))
         {
-            print("__________" + d);
             UITriviaButton newButton = (UITriviaButton)AddItem();
             newButton.OnInit(d);
             all.Add(newButton);
@@ -42,7 +43,24 @@ public class TriviaUI : UIScrollItemsScreen
     }
     public void Done()
     {
-        print("next");
+        bool hasError = false;
+        foreach (UITriviaButton uITriviaButton in all)
+        {
+            if (data.type == DatabaseManager.TestData.types.SINGLE)
+            {
+                if (uITriviaButton.isOn && uITriviaButton.data.value == 1)
+                    correctAnswers++;
+            }
+            else {                
+                if (uITriviaButton.isOn && uITriviaButton.data.value == 0)
+                    hasError = true;
+                else if (!uITriviaButton.isOn && uITriviaButton.data.value == 1)
+                    hasError = true;
+            }
+        }
+        if (data.type == DatabaseManager.TestData.types.MULTIPLE && !hasError)
+            correctAnswers++;
+
         testUI.Next();
     }
 }

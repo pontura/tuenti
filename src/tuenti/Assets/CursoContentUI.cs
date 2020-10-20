@@ -26,7 +26,7 @@ public class CursoContentUI : MonoBehaviour
         dialoguesUI.Close();
         if(id > data.all.Length-1)
         {
-            GetComponent<CursosUI>().Init();
+            GetComponent<CursosUI>().CursoReady();
             return;
         }
         DatabaseManager.CursoContentLineData d = data.all[id];

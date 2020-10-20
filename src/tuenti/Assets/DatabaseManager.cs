@@ -37,6 +37,17 @@ public class DatabaseManager : MonoBehaviour
         public int id;
         public string nombre;
         public AllContentData allContent;
+        public int test_score;
+
+        public void CheckIfScore()
+        {
+            test_score = PlayerPrefs.GetInt("test_curso_" + id, 0);
+        }
+        public void SetScore(int score)
+        {
+            test_score = score;
+            PlayerPrefs.SetInt("test_curso_" + id, score);
+        }
     }
     [Serializable] public class CursoContentLineData
     {
@@ -92,6 +103,8 @@ public class DatabaseManager : MonoBehaviour
     void OnCursosDone(string data)
     {
         cursosData = JsonUtility.FromJson<CursosData>(data);
+        foreach (CursoData cursoData in cursosData.all)
+            cursoData.CheckIfScore();
         StartCoroutine(LoadJsonCursosContent(GetCursosContentDone) );
     }
     void GetCursosContentDone()
@@ -162,6 +175,13 @@ public class DatabaseManager : MonoBehaviour
         }
         OnDone();
     }
+    public CursoData GetCursoByID(int id)
+    {
+        foreach (CursoData c in cursosData.all)
+            if (c.id == id)
+                return c;
+        return null;
+    }
     public AllContentData GetCursoContentActive()
     {
         return GetCursoContent(Data.Instance.userData.curso_active_id);
@@ -188,5 +208,13 @@ public class DatabaseManager : MonoBehaviour
             if (data.test_id == test_id)
                 all.Add(data);
         return all;
+    }
+    public List<TestData> GetAllTestDataByCurso(int id)
+    {
+        List<TestData> arr = new List<TestData>();
+        foreach (TestData data in testsData.all)
+            if (data.curso_id == id)
+                arr.Add(data);
+        return arr;
     }
 }
