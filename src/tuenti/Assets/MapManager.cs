@@ -9,6 +9,8 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
+        if (Data.Instance.lastScene == "Cursos" || Data.Instance.lastScene == "Tests")
+            id = 1;
         SetRoom();
     }
     public void ChangeRoom(int id)

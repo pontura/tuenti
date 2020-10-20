@@ -35,9 +35,12 @@ public class TestsUI : MonoBehaviour
             SetOn();
     }
     void SetOn()
-    {
-        
+    {        
         DatabaseManager.TestData data = all[id];
         GetComponent<TriviaUI>().OnInit(data);
+    }
+    public void ShowOldTests()
+    {
+        GetComponent<TestsOld>().OnInit();
     }
 }

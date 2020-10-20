@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class Data : MonoBehaviour
 {
     static Data mInstance = null;
+    public string lastScene;
     [HideInInspector] public string newScene;
     public DatabaseManager databaseManager;
     public UserData userData;
@@ -20,6 +21,7 @@ public class Data : MonoBehaviour
     }
     public void LoadLevel(string aLevelName)
     {
+        lastScene = newScene;
         this.newScene = aLevelName;
          SceneManager.LoadScene(newScene);
     }
