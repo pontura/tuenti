@@ -5,11 +5,31 @@ using UnityEngine;
 public class MapZone : MonoBehaviour
 {
     public GameObject startingPoint;
+    public GameObject housePoint;
+    public GameObject academyPoint;
+    public GameObject testsPoint;
+    public GameObject cursosPoint;
 
     public void Init()
     {
         gameObject.SetActive(true);
         startingPoint.SetActive(false);
-        Game.Instance.character.transform.position = startingPoint.transform.position;
+
+        switch(Data.Instance.lastScene)
+        {
+            case "Tests":
+                SetAvatarTo(testsPoint);
+                break;
+            case "Cursos":
+                SetAvatarTo(cursosPoint);
+                break;
+            default:
+                SetAvatarTo(startingPoint);
+                break;
+        }       
+    }
+    public void SetAvatarTo(GameObject go)
+    {
+        Game.Instance.character.transform.position = go.transform.position;
     }
 }

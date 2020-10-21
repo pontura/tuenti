@@ -22,10 +22,11 @@ public class Data : MonoBehaviour
         }
     }
     public void LoadLevel(string aLevelName)
-    {
+    {       
         lastScene = newScene;
         this.newScene = aLevelName;
          SceneManager.LoadScene(newScene);
+        print("LOAD LEVEL " + lastScene + newScene);
     }
     void Awake()
     {

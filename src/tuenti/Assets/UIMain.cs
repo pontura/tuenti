@@ -16,10 +16,6 @@ public class UIMain : MonoBehaviour
     {
         Events.GetBook -= GetBook;
     }
-    public void Cursos()
-    {
-        Data.Instance.LoadLevel("Cursos");
-    }
     void GetBook(Books.BookData d)  { SetBooksGrabbed(); }
     public void OpenBooks()
     {
