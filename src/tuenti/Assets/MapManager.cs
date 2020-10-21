@@ -6,12 +6,19 @@ public class MapManager : MonoBehaviour
 {
     public MapZone[] all;
     public int id = 0;
-
+    MapZone mapZone;
     void Start()
     {
-        if (Data.Instance.lastScene == "Cursos" || Data.Instance.lastScene == "Tests")
-            id = 1;
-        SetRoom();
+        if (Data.Instance.lastScene == "Cursos")
+        {
+            ChangeRoom(1);
+            mapZone.SetAvatarTo(mapZone.cursosPoint);
+        } else if( Data.Instance.lastScene == "Tests")
+        {
+            ChangeRoom(1);
+            mapZone.SetAvatarTo(mapZone.testsPoint);
+        } else
+            ChangeRoom(0);
     }
     public void ChangeRoom(int id)
     {
@@ -23,6 +30,7 @@ public class MapManager : MonoBehaviour
         foreach (MapZone mz in all)
             mz.gameObject.SetActive(false);
 
-        all[id].Init();
+        mapZone = all[id];
+        mapZone.Init();
     }
 }
