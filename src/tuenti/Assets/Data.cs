@@ -12,7 +12,7 @@ public class Data : MonoBehaviour
     public DatabaseManager databaseManager;
     public UserData userData;
     public TextsManager textsManager;
-    public UIBooks uiBooks;
+    public UIUserPanel uiUserPanel;
 
     public static Data Instance
     {

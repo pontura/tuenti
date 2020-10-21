@@ -17,10 +17,7 @@ public class UIMain : MonoBehaviour
         Events.GetBook -= GetBook;
     }
     void GetBook(Books.BookData d)  { SetBooksGrabbed(); }
-    public void OpenBooks()
-    {
-        Data.Instance.uiBooks.OnInit();
-    }
+
     void SetBooksGrabbed()
     {
         int totalBooksGrabbed = Data.Instance.userData.GetTotalBooksGrabbed();

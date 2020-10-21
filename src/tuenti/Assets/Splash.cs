@@ -17,6 +17,9 @@ public class Splash : MonoBehaviour
     }
     void DatabaseLoaded()
     {
-        Data.Instance.LoadLevel("Game");
+        if (Data.Instance.userData.IsLogged())
+            Data.Instance.LoadLevel("Game");
+        else
+            Data.Instance.uiUserPanel.OnInit();
     }
 }

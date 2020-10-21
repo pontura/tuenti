@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserData : MonoBehaviour
 {
+    public string username;
     public int curso_active_id;
     public int level;
     public int curso_id;
@@ -23,10 +24,18 @@ public class UserData : MonoBehaviour
         for(int a=0; a< totalBooks; a++)
             books.Add(PlayerPrefs.GetInt("book_" + a, 0));
 
+        username = PlayerPrefs.GetString("username");
         level = PlayerPrefs.GetInt("level", 0);
         curso_id = PlayerPrefs.GetInt("curso_id", 0);
 
+
         GetComponent<Books>().Init(books);
+    }
+    public bool IsLogged()
+    {
+        if (username == "")
+            return false;
+        return true;
     }
     void GetBook(Books.BookData data)
     {
@@ -49,5 +58,10 @@ public class UserData : MonoBehaviour
             curso_id = curso_active_id;
             PlayerPrefs.SetInt("curso_id", curso_id);           
         }
+    }
+    public void Register(string _username)
+    {
+        PlayerPrefs.SetString("username", _username);
+        username = _username;
     }
 }

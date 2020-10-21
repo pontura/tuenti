@@ -17,10 +17,7 @@ public class UIBooks : UIScrollItemsScreen
         Events.GetBook -= GetBook;
     }
     void GetBook(Books.BookData d) { SetBooksGrabbed(); }
-    public void OpenBooks()
-    {
-        Data.Instance.uiBooks.OnInit();
-    }
+
     void SetBooksGrabbed()
     {
         int totalBooksGrabbed = Data.Instance.userData.GetTotalBooksGrabbed();
@@ -30,7 +27,7 @@ public class UIBooks : UIScrollItemsScreen
     {
         Init();
         Reset();
-        foreach (Books.BookData data in GetComponent<Books>().all)
+        foreach (Books.BookData data in Data.Instance.GetComponent<Books>().all)
         {
             BookButton newButton = (BookButton)AddItem();
             newButton.OnInit(data);
@@ -40,6 +37,5 @@ public class UIBooks : UIScrollItemsScreen
 
         BookButton button = (BookButton)uiButton;
         Events.ReadBook(button.data.id);
-        Close();
     }
 }

@@ -45,6 +45,8 @@ public class DatabaseManager : MonoBehaviour
         }
         public void SetScore(int score)
         {
+            if (test_score > score)
+                return;
             test_score = score;
             PlayerPrefs.SetInt("test_curso_" + id, score);
         }
@@ -216,5 +218,12 @@ public class DatabaseManager : MonoBehaviour
             if (data.curso_id == id)
                 arr.Add(data);
         return arr;
+    }
+    public int GetTotalStars()
+    {
+        int total = 0;
+        foreach (CursoData c in cursosData.all)
+            total += c.test_score;
+        return total;
     }
 }

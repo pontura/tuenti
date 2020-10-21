@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BookReader : UIPanelScreen
 {
-    public Transform container;
-
     private void Awake()
     {
         Events.ReadBook += ReadBook;
