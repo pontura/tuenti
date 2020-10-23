@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserData : MonoBehaviour
 {
+    public string[] levels;
     public string username;
     public int curso_active_id;
     public int level;
@@ -63,5 +64,23 @@ public class UserData : MonoBehaviour
     {
         PlayerPrefs.SetString("username", _username);
         username = _username;
+    }
+    public void SetLevelUp()
+    {
+        level++;
+        PlayerPrefs.SetInt("level", level);
+        Events.OnConfirmation("Subiste de nivel!", null);
+    }
+    public void TestDone(int curso_id, int correct)
+    {
+        if (level == 0 && correct >= 6)
+            SetLevelUp();
+    }
+    public string GetLevelName()
+    {
+        if (level >= levels.Length)
+            return levels[levels.Length - 1];
+        else
+            return levels[level];
     }
 }

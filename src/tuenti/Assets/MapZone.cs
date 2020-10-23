@@ -30,6 +30,7 @@ public class MapZone : MonoBehaviour
     }
     public void SetAvatarTo(GameObject go)
     {
-        Game.Instance.character.transform.position = go.transform.position;
+        if(go != null)
+            Game.Instance.character.transform.position = go.transform.position;
     }
 }

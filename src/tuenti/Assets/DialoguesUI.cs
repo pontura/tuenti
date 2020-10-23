@@ -10,7 +10,7 @@ public class DialoguesUI : UIPanelScreen
     CursoContentUI cursoContentUI;
     DatabaseManager.CursoContentLineData data;
 
-    void Awake()
+    void Start()
     {
         cursoContentUI = GetComponent<CursoContentUI>();
     }

@@ -8,7 +8,7 @@ public class ConfirmationSignal : UIPanelScreen
     public Text field;
     System.Action OnOk;
 
-    void Awake()
+    void Start()
     {
         Events.OnConfirmation += OnConfirmation;
     }

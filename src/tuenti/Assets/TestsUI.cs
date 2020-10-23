@@ -6,6 +6,7 @@ public class TestsUI : MonoBehaviour
 {
     int id;
     public List<DatabaseManager.TestData> all;
+    DatabaseManager.CursoData actualCurso;
 
     void Start()
     {
@@ -20,11 +21,25 @@ public class TestsUI : MonoBehaviour
     {
         if (Data.Instance.databaseManager.allLoaded)
         {
-            all = Data.Instance.databaseManager.GetAllTestDataByCurso(Data.Instance.userData.curso_active_id);
-            SetOn();
+            SetCursoByID(Data.Instance.userData.curso_active_id);
+            if (actualCurso.test_score > 0)
+                ShowOldTests();
+            else
+                SetOn();
         }
         else
             Invoke("Loop", 0.1f);
+    }
+    public void OpenOldCurso(int curso_id)
+    {
+        SetCursoByID(curso_id);
+        SetOn();
+    }
+    void SetCursoByID(int curso_id)
+    {
+        all = Data.Instance.databaseManager.GetAllTestDataByCurso(curso_id);
+        actualCurso = Data.Instance.databaseManager.GetCursoByID(curso_id);
+        print("actualCurso " + actualCurso.id + " score: " + actualCurso.test_score);
     }
     public void Next()
     {

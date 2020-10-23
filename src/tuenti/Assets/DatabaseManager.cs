@@ -226,4 +226,25 @@ public class DatabaseManager : MonoBehaviour
             total += c.test_score;
         return total;
     }
+    public bool IsCursoLocked(int curso_id)
+    {
+        int id = 0;
+        int level = Data.Instance.userData.level;
+        foreach (CursoData c in cursosData.all)
+        {
+            if (c.id == curso_id)
+            {
+                if (level == 0)
+                {
+                    if (id == 0) return false; else return true;
+                }
+                else if (level == 1)
+                {
+                    if (id < 4) return false; else return true;
+                }
+            }
+            id++;
+        }
+        return true;
+    }
 }

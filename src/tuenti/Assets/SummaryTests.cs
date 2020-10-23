@@ -17,5 +17,6 @@ public class SummaryTests : UIPanelScreen
     {
         Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).SetScore(correctAnswers);
         GetComponent<TestsUI>().GotoGame();
+        Data.Instance.userData.TestDone(Data.Instance.userData.curso_active_id, correctAnswers);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIPanelScreen : MonoBehaviour
 {
     public GameObject panel;
-    void Start()
+    void Awake()
     {
         panel.SetActive(false);
     }
