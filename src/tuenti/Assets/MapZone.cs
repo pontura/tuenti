@@ -9,7 +9,18 @@ public class MapZone : MonoBehaviour
     public GameObject academyPoint;
     public GameObject testsPoint;
     public GameObject cursosPoint;
+    public GameObject[] gosToArrenge;
 
+    private void Start()
+    {
+        foreach(GameObject go in gosToArrenge)
+        {
+            Vector3 pos = go.transform.localPosition;
+            pos.z = pos.y;
+            go.transform.localPosition = pos;
+        }
+            
+    }
     public void Init()
     {
         gameObject.SetActive(true);

@@ -22,7 +22,9 @@ public class Door : MonoBehaviour
                 case types.TO_CITY:
                     Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_city, Goto);  break;
                 case types.TO_HOME:
-                    Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_home, Goto);   break;
+                    // Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_home, Goto);   
+                    Data.Instance.uiUserPanel.OnInit();
+                    break;
             }            
         }
     }
