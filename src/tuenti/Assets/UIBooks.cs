@@ -29,8 +29,11 @@ public class UIBooks : UIScrollItemsScreen
         Reset();
         foreach (Books.BookData data in Data.Instance.GetComponent<Books>().all)
         {
-            BookButton newButton = (BookButton)AddItem();
-            newButton.OnInit(data);
+            if (data.state == Books.BookData.states.GOT_IT)
+            {
+                BookButton newButton = (BookButton)AddItem();
+                newButton.OnInit(data);
+            }
         }
     }
     public override void OnUIButtonClicked(UIButton uiButton) {
