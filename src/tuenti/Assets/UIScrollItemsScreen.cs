@@ -15,15 +15,10 @@ public class UIScrollItemsScreen : UIPanelScreen
     }
     public void CursoReady()
     {
-        print("CursoDone");
         Data.Instance.userData.CursoDone();
         Init();
     }
     public void Reset()
-    {
-        Utils.RemoveAllChildsIn(container);
-    }
-    void InitScroll()
     {
         Utils.RemoveAllChildsIn(container);
     }

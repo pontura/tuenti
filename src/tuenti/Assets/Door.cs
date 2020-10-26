@@ -22,8 +22,7 @@ public class Door : MonoBehaviour
                 case types.TO_CITY:
                     Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_city, Goto);  break;
                 case types.TO_HOME:
-                    // Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_home, Goto);   
-                    Data.Instance.uiUserPanel.OnInit();
+                    Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_home, Goto);                       
                     break;
             }            
         }
@@ -37,7 +36,7 @@ public class Door : MonoBehaviour
             case types.TO_CITY:
                 Game.Instance.mapManager.ChangeRoom(0);   break;
             case types.TO_HOME:
-                Game.Instance.mapManager.ChangeRoom(2);    break;
+                Data.Instance.uiUserPanel.OnInit(); break;
         }
     }
 }
