@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     public float speed = 4;
     public Vector2 limits;
     Animator anim;
-    bool walking;
+    public bool walking;
     bool goLeft;
 
     void Start()
