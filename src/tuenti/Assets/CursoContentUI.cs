@@ -7,17 +7,28 @@ public class CursoContentUI : MonoBehaviour
     public int id;
     DialoguesUI dialoguesUI;
     MultiplechoiceUI multiplechoiceUI;
-    DatabaseManager.AllContentData data;
+    public DatabaseManager.AllContentData data;
+
+    public enum types
+    {
+        CURSO,
+        VENTA
+    }
+    types type;
 
     private void Awake()
     {
         dialoguesUI = GetComponent<DialoguesUI>();
         multiplechoiceUI = GetComponent<MultiplechoiceUI>();
     }
-    public void Init()
+    public void Init(types type)
     {
+        this.type = type;
         id = 0;
-        data = Data.Instance.databaseManager.GetCursoContentActive();
+        if(type == types.CURSO)
+            data = Data.Instance.databaseManager.GetCursoContentActive();
+        else
+            data = Data.Instance.databaseManager.GetVentaContentActive();
         SetOn();
     }
     void SetOn()
@@ -31,7 +42,7 @@ public class CursoContentUI : MonoBehaviour
         }
         DatabaseManager.CursoContentLineData d = data.all[id];
         if (d.isMultiplechoice)
-            multiplechoiceUI.OnInit(d);
+            multiplechoiceUI.OnInit(d, type);
         else
             dialoguesUI.OnInit(d);
     }

@@ -13,13 +13,18 @@ public class MultiplechoiceUI : UIScrollItemsScreen
     {
         cursoContentUI = GetComponent<CursoContentUI>();
     }
-    public void OnInit(DatabaseManager.CursoContentLineData data)
+    public void OnInit(DatabaseManager.CursoContentLineData data, CursoContentUI.types type)
     {
         Init();
         Reset();
         avatarName.text = data.character_id.ToString();
         field.text = data.text;
-        foreach (DatabaseManager.MultiplechoiceData d in Data.Instance.databaseManager.GetMultiplechoiceDataByCursoID(data.id))
+        List<DatabaseManager.MultiplechoiceData> arr;
+        if(type == CursoContentUI.types.CURSO)
+            arr = Data.Instance.databaseManager.GetMultiplechoiceDataByCursoID(data.id);
+        else
+            arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(data.id);
+        foreach (DatabaseManager.MultiplechoiceData d in arr)
         {
             print("__________" + d);
             UICursoContentButton newButton = (UICursoContentButton)AddItem();

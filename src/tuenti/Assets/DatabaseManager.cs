@@ -11,6 +11,7 @@ public class DatabaseManager : MonoBehaviour
     public MultiplechoicesData multiplechoiceData;
     public TestsData testsData;
     public AnswersData answwersData;
+    public VentasData ventasData;
 
     [Serializable] public class CursosData  {
         public CursoData[] all;
@@ -32,6 +33,13 @@ public class DatabaseManager : MonoBehaviour
     {
         public MultiplechoiceData[] all;
     }
+    [Serializable]
+    public class VentasData
+    {
+        public int lastPlayedID;
+        public VentaData[] all;
+    }
+   
     [Serializable] public class CursoData
     {
         public int id;
@@ -55,6 +63,7 @@ public class DatabaseManager : MonoBehaviour
     {
         public int id;
         public int curso_id;
+        public int venta_id;
         public int character_id;
         public string text;
         public int order;
@@ -67,6 +76,7 @@ public class DatabaseManager : MonoBehaviour
     {
         public int id;
         public int cursoContent_id;
+        public int ventaContent_id;
         public int character_id;
         public string text;
         public int order;
@@ -96,6 +106,13 @@ public class DatabaseManager : MonoBehaviour
         public int value;
         public string text;
         public int order;
+    }
+    [Serializable]
+    public class VentaData
+    {
+        public int id;
+        public string nombre;
+        public AllContentData allContent;
     }
 
     public void Init()
@@ -134,7 +151,16 @@ public class DatabaseManager : MonoBehaviour
     void GetAnswersDone(string data)
     {
         answwersData = JsonUtility.FromJson<AnswersData>(data);
-        StartCoroutine(LoadJsonCursosContent(AllLoaded));
+        StartCoroutine(LoadJsonCursosContent(GetVentas));
+    }
+    void GetVentas()
+    {
+        StartCoroutine(LoadJson(url + "getVentas.php", GetVentasDone));
+    }
+    void GetVentasDone(string data)
+    {
+        ventasData = JsonUtility.FromJson<VentasData>(data);
+        StartCoroutine(LoadJsonVentaContent(AllLoaded));
     }
     void AllLoaded()
     {
@@ -177,6 +203,29 @@ public class DatabaseManager : MonoBehaviour
         }
         OnDone();
     }
+    IEnumerator LoadJsonVentaContent(System.Action OnDone)
+    {
+        foreach (VentaData cData in ventasData.all)
+        {
+            string newURL = url + "getVentaContent.php?id=" + cData.id;
+            print(newURL);
+            
+
+            WWW www = new WWW(newURL);
+            yield return www;
+            if (www.error == null)
+            {             
+                cData.allContent = JsonUtility.FromJson<AllContentData>(www.text);
+                foreach (CursoContentLineData d in cData.allContent.all)
+                    d.isMultiplechoice = true;
+            }
+            else
+            {
+                Debug.Log("ERROR: " + www.error);
+            }
+        }
+        OnDone();
+    }
     public CursoData GetCursoByID(int id)
     {
         foreach (CursoData c in cursosData.all)
@@ -188,9 +237,22 @@ public class DatabaseManager : MonoBehaviour
     {
         return GetCursoContent(Data.Instance.userData.curso_active_id);
     }
+    public AllContentData GetVentaContentActive()
+    {
+        AllContentData d = GetVentaContent(ventasData.all[Data.Instance.userData.venta_active_id].id);
+        Data.Instance.userData.NextVenta();
+        return d;
+    }
     public AllContentData GetCursoContent(int id)
     {
         foreach (CursoData c in cursosData.all)
+            if (c.id == id)
+                return c.allContent;
+        return null;
+    }
+    public AllContentData GetVentaContent(int id)
+    {
+        foreach (VentaData c in ventasData.all)
             if (c.id == id)
                 return c.allContent;
         return null;
@@ -200,6 +262,14 @@ public class DatabaseManager : MonoBehaviour
         List<MultiplechoiceData> all = new List<MultiplechoiceData>();
         foreach (MultiplechoiceData data in multiplechoiceData.all)
             if (data.cursoContent_id == curso_id)
+                all.Add(data);
+        return all;
+    }
+    public List<MultiplechoiceData> GetMultiplechoiceDataByVentaID(int venta_id)
+    {
+        List<MultiplechoiceData> all = new List<MultiplechoiceData>();
+        foreach (MultiplechoiceData data in multiplechoiceData.all)
+            if (data.ventaContent_id == venta_id)
                 all.Add(data);
         return all;
     }

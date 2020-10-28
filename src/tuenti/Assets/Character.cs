@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     public bool walking;
     bool goLeft;
 
-    void Start()
+    void Awake()
     {
         goLeft = true;
         anim = GetComponent<Animator>();
@@ -48,5 +48,13 @@ public class Character : MonoBehaviour
         float _x = transform.localPosition.x + x * speed * Time.deltaTime;
         float _y = transform.localPosition.y + y * speed * Time.deltaTime;
         transform.localPosition = new Vector3(_x, _y, _y);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Costumer")
+        {
+            Costumer c = other.gameObject.GetComponent<Costumer>();
+            Data.Instance.LoadLevel("Ventas");
+        }
     }
 }

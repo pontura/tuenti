@@ -32,7 +32,7 @@ public class CursosUI : UIScrollItemsScreen
     {
         UICursoButton button = (UICursoButton)uiButton;
         Data.Instance.userData.curso_active_id = button.data.id;
-        GetComponent<CursoContentUI>().Init();
+        GetComponent<CursoContentUI>().Init(CursoContentUI.types.CURSO);
         Close();
     }
 }
