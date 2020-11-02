@@ -10,6 +10,7 @@ public class TriviaUI : UIScrollItemsScreen
     DatabaseManager.TestData data;
     [HideInInspector] public List<UITriviaButton> all;
     public int correctAnswers;
+    bool answered;
 
     private void Awake()
     {
@@ -28,9 +29,12 @@ public class TriviaUI : UIScrollItemsScreen
             newButton.OnInit(d);
             all.Add(newButton);
         }
+       
     }
     public override void OnUIButtonClicked(UIButton uiButton)
     {
+        if (answered)
+            return;
         UITriviaButton button = (UITriviaButton)uiButton;
         if (data.type == DatabaseManager.TestData.types.SINGLE)
             UnSelectAll();
@@ -43,24 +47,55 @@ public class TriviaUI : UIScrollItemsScreen
     }
     public void Done()
     {
+       
+        if (answered)
+            return;
+        answered = true;
         bool hasError = false;
         foreach (UITriviaButton uITriviaButton in all)
         {
+            
             if (data.type == DatabaseManager.TestData.types.SINGLE)
             {
                 if (uITriviaButton.isOn && uITriviaButton.data.value == 1)
+                {
+                    uITriviaButton.SetResult(true);
                     correctAnswers++;
+                }
+                else if (uITriviaButton.data.value == 1)
+                {
+                    uITriviaButton.SetResult(true);
+                }
+                else if (uITriviaButton.isOn)
+                {
+                    uITriviaButton.SetResult(false);
+                }
             }
-            else {                
+            else {
                 if (uITriviaButton.isOn && uITriviaButton.data.value == 0)
+                {
+                    uITriviaButton.SetResult(false);
                     hasError = true;
+                }
                 else if (!uITriviaButton.isOn && uITriviaButton.data.value == 1)
+                {
+                    uITriviaButton.SetResult(true);
                     hasError = true;
+                }
+                else if (uITriviaButton.isOn && uITriviaButton.data.value == 1)
+                {
+                    uITriviaButton.SetResult(true);
+                }
             }
         }
         if (data.type == DatabaseManager.TestData.types.MULTIPLE && !hasError)
             correctAnswers++;
-
+        
+        Invoke("Delayed", 2);
+    }
+    void Delayed()
+    {
         testUI.Next();
+        answered = false;
     }
 }

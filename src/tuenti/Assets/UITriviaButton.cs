@@ -33,4 +33,21 @@ public class UITriviaButton : UIButton
         else
             background.color = Color.white;
     }
+    public void SetResult(bool success)
+    {
+        
+        GetComponent<Button>().enabled = false;
+        if (success)
+        {
+            field.color = Color.black;
+            background.color = Color.green;
+        }
+        else
+        {
+            field.color = Color.white;
+            background.color = Color.red;
+        }
+            
+
+    }
 }
