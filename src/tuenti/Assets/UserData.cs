@@ -9,6 +9,7 @@ public class UserData : MonoBehaviour
     public int curso_active_id;
     public int venta_active_id;
     public int level;
+    public int ventas;
     public int curso_id;
     int totalBooks = 6;
     public List<int> books;
@@ -29,7 +30,7 @@ public class UserData : MonoBehaviour
         username = PlayerPrefs.GetString("username");
         level = PlayerPrefs.GetInt("level", 0);
         curso_id = PlayerPrefs.GetInt("curso_id", 0);
-
+        ventas = PlayerPrefs.GetInt("ventas", 0);
 
         GetComponent<Books>().Init(books);
     }
@@ -61,8 +62,13 @@ public class UserData : MonoBehaviour
             PlayerPrefs.SetInt("curso_id", curso_id);           
         }
     }
-    public void NextVenta()
+    public void VentaDone(bool success)
     {
+        if (success)
+        {
+            ventas++;
+            PlayerPrefs.SetInt("ventas", ventas);
+        }
         venta_active_id++;
         if (venta_active_id >= Data.Instance.databaseManager.ventasData.all.Length)
             venta_active_id = 0;

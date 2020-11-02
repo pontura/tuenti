@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class VentasUI : MonoBehaviour
 {
+    public int totalScore;
+    public int score;
+
     void Start()
     {
-        Data.Instance.userData.venta_active_id = 1;
         GetComponent<CursoContentUI>().Init(CursoContentUI.types.VENTA);
+    }
+    public void OnReady(bool success)
+    {
+        Data.Instance.userData.VentaDone(success);
+        Data.Instance.LoadLevel("Game");
     }
 }

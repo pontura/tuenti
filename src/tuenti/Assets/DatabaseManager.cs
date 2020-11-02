@@ -239,8 +239,8 @@ public class DatabaseManager : MonoBehaviour
     }
     public AllContentData GetVentaContentActive()
     {
+        print("Data.Instance.userData.venta_active_id " + Data.Instance.userData.venta_active_id);
         AllContentData d = GetVentaContent(ventasData.all[Data.Instance.userData.venta_active_id].id);
-        Data.Instance.userData.NextVenta();
         return d;
     }
     public AllContentData GetCursoContent(int id)

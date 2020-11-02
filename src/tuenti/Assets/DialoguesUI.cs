@@ -28,6 +28,6 @@ public class DialoguesUI : UIPanelScreen
         if (data.goto_id == 0)
             cursoContentUI.Next();
         else
-            cursoContentUI.Goto(data.goto_id);
+            cursoContentUI.Goto(data.goto_id, data.correct);
     }
 }

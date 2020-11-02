@@ -34,6 +34,6 @@ public class MultiplechoiceUI : UIScrollItemsScreen
     public override void OnUIButtonClicked(UIButton uiButton)
     {
         UICursoContentButton button = (UICursoContentButton)uiButton;
-        cursoContentUI.Goto(button.data.goto_id);
+        cursoContentUI.Goto(button.data.goto_id, button.data.correct);
     }
 }
