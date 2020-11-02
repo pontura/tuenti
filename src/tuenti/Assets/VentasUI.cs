@@ -15,5 +15,7 @@ public class VentasUI : MonoBehaviour
     {
         Data.Instance.userData.VentaDone(success);
         Data.Instance.LoadLevel("Game");
+        if (success)
+            Events.OnConfirmation("¡Venta Exitosa!", null);
     }
 }

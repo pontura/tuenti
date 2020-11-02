@@ -13,6 +13,7 @@ public class UIUserPanel : UIPanelScreen
     public Text usernameField;
     public Text starsField;
     public Text levelField;
+    public Text ventasField;
 
     public UIBooks uiBooks;
 
@@ -37,6 +38,7 @@ public class UIUserPanel : UIPanelScreen
         usernameField.text = Data.Instance.userData.username;
         starsField.text = "Puntos: " + Data.Instance.databaseManager.GetTotalStars();
         levelField.text = Data.Instance.userData.GetLevelName();
+        ventasField.text = "Ventas: " + Data.Instance.userData.ventas.ToString();
         uiBooks.OnInit();
     }
     public void RegisterClicked()
