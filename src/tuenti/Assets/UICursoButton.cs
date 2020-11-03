@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class UICursoButton : UIButton
 {
     public GameObject locked;
-
+    public Image image;
     public Text field;
     public DatabaseManager.CursoData data;
+    public Sprite[] characters;
 
     public void OnInit(DatabaseManager.CursoData data)
     {
@@ -18,5 +19,6 @@ public class UICursoButton : UIButton
         locked.SetActive(isLocked);
         if (isLocked)
             GetComponent<Button>().interactable = false;
+        image.sprite = characters[data.character_id];
     }
 }

@@ -47,6 +47,7 @@ public class DatabaseManager : MonoBehaviour
         public AllContentData allContent;
         public int test_score;
         public int character_id;
+        public string video;
 
         public void CheckIfScore()
         {
@@ -299,6 +300,7 @@ public class DatabaseManager : MonoBehaviour
     }
     public bool IsCursoLocked(int curso_id)
     {
+        return false;
         int id = 0;
         int level = Data.Instance.userData.level;
         foreach (CursoData c in cursosData.all)

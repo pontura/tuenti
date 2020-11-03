@@ -9,6 +9,7 @@ public class DialoguesUI : UIPanelScreen
     public Text field;
     CursoContentUI cursoContentUI;
     DatabaseManager.CursoContentLineData data;
+    string mentorName;
 
     void Start()
     {
@@ -16,9 +17,19 @@ public class DialoguesUI : UIPanelScreen
     }
     public void OnInit(DatabaseManager.CursoContentLineData data)
     {
+        int character_id = Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).character_id;
+        if (character_id == 0)
+            mentorName = "Xavier";
+        else
+            mentorName = "Christian";
         this.data = data;
         Init();
-        avatarName.text = data.character_id.ToString();
+
+        if(data.character_id == 0)
+            avatarName.text = mentorName;
+        else
+            avatarName.text = "Conejo";
+
         field.text = data.text;
 
         panel.SetActive(true);

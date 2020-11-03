@@ -42,11 +42,19 @@ public class CursosUI : UIScrollItemsScreen
         }
     }
     public override void OnUIButtonClicked(UIButton uiButton)
-    {
+    {        
         UICursoButton button = (UICursoButton)uiButton;
+
+        if(button.data.video != "")
+            Events.PlayVideo("d6Wu20mn5aw", OnDone);
+
         Data.Instance.userData.curso_active_id = button.data.id;
         characters[button.data.character_id].SetActive(true);
         GetComponent<CursoContentUI>().Init(CursoContentUI.types.CURSO);
         Close();
+    }
+    void OnDone()
+    {
+
     }
 }

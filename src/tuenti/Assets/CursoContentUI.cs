@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursoContentUI : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class CursoContentUI : MonoBehaviour
     DialoguesUI dialoguesUI;
     MultiplechoiceUI multiplechoiceUI;
     public DatabaseManager.AllContentData data;
+
+    public GameObject[] characters;
+    public GameObject mentor1;
+    public GameObject mentor2;
 
     public enum types
     {
@@ -26,11 +31,23 @@ public class CursoContentUI : MonoBehaviour
         this.type = type;
         id = 0;
         if (type == types.CURSO)
+        {
+            int character_id = Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).character_id;
             data = Data.Instance.databaseManager.GetCursoContentActive();
+            if (character_id == 0)
+            {
+                mentor1.SetActive(true);
+                mentor2.SetActive(false);
+            } else
+            {
+                mentor2.SetActive(true);
+                mentor1.SetActive(false);
+            }
+        }
         else
         {
             data = Data.Instance.databaseManager.GetVentaContentActive();
-           
+
         }
         SetOn();
     }
@@ -45,6 +62,10 @@ public class CursoContentUI : MonoBehaviour
             return;
         }
         DatabaseManager.CursoContentLineData d = data.all[id];
+        foreach (GameObject go in characters)
+            go.SetActive(false);
+        characters[d.character_id].SetActive(true);
+
         if (d.isMultiplechoice)
         {
             multiplechoiceUI.OnInit(d, type);
