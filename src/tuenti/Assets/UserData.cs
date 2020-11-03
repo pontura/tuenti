@@ -6,12 +6,14 @@ public class UserData : MonoBehaviour
 {
     public string[] levels;
     public string username;
+    public string dni;
     public int curso_active_id;
     public int venta_active_id;
     public int level;
     public int ventas;
     public int curso_id;
     int totalBooks = 6;
+
     public List<int> books;
 
     private void Awake()
@@ -28,6 +30,7 @@ public class UserData : MonoBehaviour
             books.Add(PlayerPrefs.GetInt("book_" + a, 0));
 
         username = PlayerPrefs.GetString("username");
+        dni = PlayerPrefs.GetString("dni");
         level = PlayerPrefs.GetInt("level", 0);
         curso_id = PlayerPrefs.GetInt("curso_id", 0);
         ventas = PlayerPrefs.GetInt("ventas", 0);
@@ -77,10 +80,12 @@ public class UserData : MonoBehaviour
             venta_active_id = 0;
         PlayerPrefs.SetInt("venta_active_id", venta_active_id);
     }
-    public void Register(string _username)
+    public void Register(string _username, string _dni)
     {
         PlayerPrefs.SetString("username", _username);
+        PlayerPrefs.SetString("dni", _dni);
         username = _username;
+        dni = _dni;
     }
     public void SetLevelUp()
     {

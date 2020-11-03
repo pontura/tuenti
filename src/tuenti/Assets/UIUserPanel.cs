@@ -9,16 +9,19 @@ public class UIUserPanel : UIPanelScreen
     public GameObject registered;
     public GameObject register;
     public InputField inputField;
-
+    public InputField inputDniField;
     public Text usernameField;
     public Text starsField;
     public Text levelField;
     public Text ventasField;
-
+    public Text dniField;
+    public Text debugField;
     public UIBooks uiBooks;
 
     public void OnInit()
     {
+        debugField.text = "";
+        dniField.text = "";
         Init();
 
         registered.SetActive(false);
@@ -36,6 +39,7 @@ public class UIUserPanel : UIPanelScreen
     void InitRegistered()
     {
         usernameField.text = Data.Instance.userData.username;
+        dniField.text = Data.Instance.userData.dni;
         starsField.text = "Puntos: " + Data.Instance.databaseManager.GetTotalStars();
         levelField.text = Data.Instance.userData.GetLevelName();
         ventasField.text = "Ventas: " + Data.Instance.userData.ventas.ToString();
@@ -43,10 +47,19 @@ public class UIUserPanel : UIPanelScreen
     }
     public void RegisterClicked()
     {
-        if (inputField.text.Length < 2)
-            return;
+        string error = "";
 
-        Data.Instance.userData.Register(inputField.text);
+        if (inputField.text.Length < 2)
+            error = "Ingresa un nombre válido";
+        else if (inputDniField.text.Length < 2)
+            error = "Ingresa un DNI válido";
+
+        if (error != "")
+        { 
+            debugField.text = error;
+            return;
+        }
+        Data.Instance.userData.Register(inputField.text, dniField.text);
         Data.Instance.LoadLevel("Game");
         Close();
     }
