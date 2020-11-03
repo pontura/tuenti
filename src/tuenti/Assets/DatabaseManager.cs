@@ -46,6 +46,7 @@ public class DatabaseManager : MonoBehaviour
         public string nombre;
         public AllContentData allContent;
         public int test_score;
+        public int character_id;
 
         public void CheckIfScore()
         {

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class CursosUI : UIScrollItemsScreen
 {
+    public GameObject[] characters;
+
     void Start()
     {
         Loop();
+        ResetCharacters();
+    }
+    void ResetCharacters()
+    {
+        foreach (GameObject go in characters)
+            go.SetActive(false);
     }
     public void GotoGame()
     {
@@ -18,6 +26,11 @@ public class CursosUI : UIScrollItemsScreen
             LoadData();
         else
             Invoke("Loop", 0.1f);
+    }
+    public override void Init()
+    {
+        base.Init();
+        ResetCharacters();
     }
     void LoadData()
     {
@@ -32,6 +45,7 @@ public class CursosUI : UIScrollItemsScreen
     {
         UICursoButton button = (UICursoButton)uiButton;
         Data.Instance.userData.curso_active_id = button.data.id;
+        characters[button.data.character_id].SetActive(true);
         GetComponent<CursoContentUI>().Init(CursoContentUI.types.CURSO);
         Close();
     }
