@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIUserPanel : UIPanelScreen
 {
-  
+    public GameObject avatarBtn;
     public GameObject registered;
     public GameObject register;
     public InputField inputField;

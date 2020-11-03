@@ -11,6 +11,10 @@ public class Splash : MonoBehaviour
         Events.DatabaseLoaded += DatabaseLoaded;
         field.text = "CARGANDO...";
     }
+    private void Start()
+    {
+        Data.Instance.uiUserPanel.avatarBtn.SetActive(false);
+    }
     void OnDestroy()
     {
         Events.DatabaseLoaded -= DatabaseLoaded;

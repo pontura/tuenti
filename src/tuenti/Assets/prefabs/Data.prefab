@@ -3790,6 +3790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 879783048}
+  avatarBtn: {fileID: 2273576883999207430}
   registered: {fileID: 959963435}
   register: {fileID: 427434544}
   inputField: {fileID: 1535034140}

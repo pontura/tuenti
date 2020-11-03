@@ -16,6 +16,10 @@ public class Game : MonoBehaviour
     {
         if (!mInstance)  mInstance = this;
     }
+    private void Start()
+    {
+        Data.Instance.uiUserPanel.avatarBtn.SetActive(true);
+    }
     public void GotoCursos()
     {
         Data.Instance.LoadLevel("Cursos");
