@@ -116,8 +116,48 @@ public class DatabaseManager : MonoBehaviour
         public string nombre;
         public AllContentData allContent;
     }
+    [Serializable]
+    public class UserData
+    {
+        public UserLineData[] all;
+    }
+    [Serializable]
+    public class UserLineData
+    {
+        public int id;
+        public string nombre;
+        public string dni;
+        public string score;
+        public string level;
 
+    }
     public void Init()
+    {
+        StartCoroutine(LoadJson(url + "getUser.php?dni=" + Data.Instance.userData.dni, OnUserDataDone));
+    }
+    void OnUserDataDone(string data)
+    {
+        UserData userdata = JsonUtility.FromJson<UserData>(data);
+        if(userdata.all.Length>0)
+            Data.Instance.userData.isLogged = true;
+
+        StartCoroutine(LoadJsonCursosContent(GetCursosContentDone));
+    }
+    System.Action<bool> LoginOk;
+    public void OnLogin(string username, string dni, System.Action<bool> LoginOk)
+    {
+        this.LoginOk = LoginOk;
+        StartCoroutine(LoadJson(url + "getUser.php?dni=" + dni + "&username=" + username, OnLoginDone));
+    }
+    void OnLoginDone(string data)
+    {
+        UserData userdata = JsonUtility.FromJson<UserData>(data);
+        if (userdata.all.Length > 0)
+            LoginOk(true);
+        else
+            LoginOk(false);
+    }
+    public void InitLoadingContent()
     {
         StartCoroutine( LoadJson(url + "getCursos.php", OnCursosDone) );
     }

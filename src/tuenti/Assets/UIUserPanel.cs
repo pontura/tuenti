@@ -55,12 +55,41 @@ public class UIUserPanel : UIPanelScreen
             error = "Ingresa un DNI válido";
 
         if (error != "")
-        { 
-            debugField.text = error;
+        {
+            SetDebugText(error);
             return;
         }
-        Data.Instance.userData.Register(inputField.text, dniField.text);
-        Data.Instance.LoadLevel("Game");
-        Close();
+        Register(inputField.text, inputDniField.text);
+        
+    }
+    string _username;
+    string _dni;
+    public void Register(string _username, string _dni)
+    {
+        Data.Instance.databaseManager.OnLogin(_username, _dni, OnLogin);
+        this._username = _username;
+        this._dni = _dni;        
+    }
+    void OnLogin(bool success)
+    {
+        if (success)
+        {
+            Data.Instance.userData.Register(_username, _dni);
+            Data.Instance.LoadLevel("Game");
+            Close();
+        }
+        else
+        {
+            SetDebugText( "El dni no está registrado en la base" );
+        }
+    }
+    void SetDebugText(string text)
+    {
+        Invoke("ResetDebug", 3);
+        debugField.text = text;
+    }
+    void ResetDebug()
+    {
+        debugField.text = "";
     }
 }

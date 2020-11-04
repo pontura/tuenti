@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserData : MonoBehaviour
 {
+    public bool isLogged;
     public string[] levels;
     public string username;
     public string dni;
