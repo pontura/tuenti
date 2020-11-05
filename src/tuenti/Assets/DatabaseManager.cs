@@ -141,7 +141,7 @@ public class DatabaseManager : MonoBehaviour
         if(userdata.all.Length>0)
             Data.Instance.userData.isLogged = true;
 
-        StartCoroutine(LoadJsonCursosContent(GetCursosContentDone));
+        InitLoadingContent();
     }
     System.Action<bool> LoginOk;
     public void OnLogin(string username, string dni, System.Action<bool> LoginOk)
