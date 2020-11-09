@@ -8,7 +8,11 @@ public class CostumersManager : MonoBehaviour
 
     void Start()
     {
+
         foreach (Costumer c in all)
-            c.Init();
+        {
+            if(c.isActiveAndEnabled)
+                c.Init();
+        }
     }
 }

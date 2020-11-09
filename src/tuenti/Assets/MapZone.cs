@@ -10,6 +10,7 @@ public class MapZone : MonoBehaviour
     public GameObject testsPoint;
     public GameObject cursosPoint;
     public GameObject[] gosToArrenge;
+    public Vector2 limits;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class MapZone : MonoBehaviour
     {
         gameObject.SetActive(true);
         startingPoint.SetActive(false);
-
+        Game.Instance.character.limits = limits;
         switch(Data.Instance.lastScene)
         {
             case "Tests":

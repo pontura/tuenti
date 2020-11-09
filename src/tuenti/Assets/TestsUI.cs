@@ -21,11 +21,11 @@ public class TestsUI : MonoBehaviour
     {
         if (Data.Instance.databaseManager.allLoaded)
         {
-            SetCursoByID(Data.Instance.userData.curso_active_id);
-            if (actualCurso.test_score > 0)
+           // SetCursoByID(Data.Instance.userData.curso_active_id);
+           // if (actualCurso.test_score > 0)
                 ShowOldTests();
-            else
-                SetOn();
+           // else
+            //    SetOn();
         }
         else
             Invoke("Loop", 0.1f);
@@ -37,6 +37,7 @@ public class TestsUI : MonoBehaviour
     }
     void SetCursoByID(int curso_id)
     {
+        Data.Instance.userData.curso_active_id = curso_id;
         all = Data.Instance.databaseManager.GetAllTestDataByCurso(curso_id);
         actualCurso = Data.Instance.databaseManager.GetCursoByID(curso_id);
         print("actualCurso " + actualCurso.id + " score: " + actualCurso.test_score);
