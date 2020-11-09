@@ -64,6 +64,8 @@ public class CursoContentUI : MonoBehaviour
         DatabaseManager.CursoContentLineData d = data.all[id];
         foreach (GameObject go in characters)
             go.SetActive(false);
+
+        print("______character_id: " + d.character_id);
         characters[d.character_id].SetActive(true);
 
         if (d.isMultiplechoice)
