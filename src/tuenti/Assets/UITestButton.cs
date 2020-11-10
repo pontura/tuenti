@@ -20,7 +20,10 @@ public class UITestButton : UIButton
         if (cursoData.test_score > 0)
             testCanBeDone = true;
 
-        GetComponent<StarsManager>().Init(testCanBeDone, cursoData.test_score);
+        List<DatabaseManager.TestData> arr =  Data.Instance.databaseManager.GetAllTestDataByCurso(data.id);
+        float total = arr.Count;
+        float score = cursoData.test_score;
+        GetComponent<StarsManager>().Init(testCanBeDone, total, score);
 
         bool isLocked = Data.Instance.databaseManager.IsCursoLocked(data.id);
         if (forceActive)
