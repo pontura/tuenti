@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &62375137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1050,7 +1050,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 741399141}
-        m_MethodName: Close
+        m_MethodName: SetOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2920,7 +2920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &2120507069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3180,6 +3180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UITriviaButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5510913361000970201, guid: 6466b9b10ae57cb479a53b3355d72c69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3238,12 +3243,12 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.55
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
@@ -3263,7 +3268,7 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
@@ -3273,7 +3278,7 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}

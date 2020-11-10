@@ -26,7 +26,6 @@ public class Data : MonoBehaviour
         lastScene = newScene;
         this.newScene = aLevelName;
          SceneManager.LoadScene(newScene);
-        print("LOAD LEVEL " + lastScene + newScene);
     }
     void Awake()
     {

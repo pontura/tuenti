@@ -12,5 +12,6 @@ public static class Events
     public static System.Action<Books.BookData> AddBookToWorld = delegate { };
     public static System.Action<Books.BookData> GetBook = delegate { };
     public static System.Action<string, System.Action> OnConfirmation = delegate { };
-    
+    public static System.Action<string, string, bool> PlaySound = delegate { };
+    public static System.Action<string, float> ChangeVolume = delegate { };
 }

@@ -20,4 +20,8 @@ public class TestsOld : UIScrollItemsScreen
         GetComponent<TestsUI>().OpenOldCurso(button.data.id);
         Close();
     }
+    public void SetOff()
+    {
+        Data.Instance.LoadLevel("Game");
+    }
 }

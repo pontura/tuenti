@@ -8,7 +8,6 @@ public static class Utils {
      public static void RemoveAllChildsIn(Transform container)
      {
          int num = container.transform.childCount;
-            Debug.Log("____________" + num);
          for (int i = 0; i < num; i++) UnityEngine.Object.DestroyImmediate(container.transform.GetChild(0).gameObject);
      }
      public static void Shuffle(List<int> texts)

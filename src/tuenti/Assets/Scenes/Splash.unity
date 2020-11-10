@@ -265,6 +265,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &304613936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077345351746277833, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084598399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &304613946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304613936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0f10e3c244bf545a2e5952c188e29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - sourceName: ui
+    audioSource: {fileID: 0}
+    volume: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

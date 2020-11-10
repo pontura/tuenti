@@ -33,7 +33,13 @@ public class TestsUI : MonoBehaviour
     public void OpenOldCurso(int curso_id)
     {
         SetCursoByID(curso_id);
-        SetOn();
+        if (all.Count == 0)
+        {
+            Debug.Log("No hay contenido para el curso: " + curso_id);
+            Invoke("ShowOldTests", 0.1f);
+        }
+        else
+            SetOn();
     }
     void SetCursoByID(int curso_id)
     {
@@ -44,6 +50,8 @@ public class TestsUI : MonoBehaviour
     }
     public void Next()
     {
+        if (all.Count == 0)
+            return;
         id++;
         if (id > all.Count - 1)
             GetComponent<SummaryTests>().OnInit();

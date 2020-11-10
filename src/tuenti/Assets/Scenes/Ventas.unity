@@ -883,6 +883,7 @@ MonoBehaviour:
   uiButton: {fileID: 0}
   avatarName: {fileID: 1084370680}
   field: {fileID: 2120507068}
+  anim: {fileID: 1354674872}
 --- !u!114 &741399141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,7 +1802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -43.9, y: -32.4}
+  m_AnchoredPosition: {x: -43.899902, y: -32.40039}
   m_SizeDelta: {x: 84.6, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761027668
@@ -2220,6 +2221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 467415320, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.64453
+      objectReference: {fileID: 0}
     - target: {fileID: 577177688, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2243,6 +2248,10 @@ PrefabInstance:
     - target: {fileID: 908768548, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755828773, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40.40039
       objectReference: {fileID: 0}
     - target: {fileID: 1077345351746277833, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
         type: 3}
