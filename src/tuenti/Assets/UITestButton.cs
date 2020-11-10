@@ -10,7 +10,7 @@ public class UITestButton : UIButton
     public DatabaseManager.CursoData data;
     StarsManager starsManager;
 
-    public void OnInit(DatabaseManager.CursoData data)
+    public void OnInit(DatabaseManager.CursoData data, bool forceActive)
     {
         this.data = data;
         //field.text = data.id + " - Score: " + data.test_score;
@@ -23,6 +23,9 @@ public class UITestButton : UIButton
         GetComponent<StarsManager>().Init(testCanBeDone, cursoData.test_score);
 
         bool isLocked = Data.Instance.databaseManager.IsCursoLocked(data.id);
+        if (forceActive)
+            isLocked = false;
+
         locked.SetActive(isLocked);
 
         if (isLocked)

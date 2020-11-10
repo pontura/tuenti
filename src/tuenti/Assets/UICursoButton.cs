@@ -11,11 +11,13 @@ public class UICursoButton : UIButton
     public DatabaseManager.CursoData data;
     public Sprite[] characters;
 
-    public void OnInit(DatabaseManager.CursoData data)
+    public void OnInit(DatabaseManager.CursoData data, bool forceUnBlock)
     {
         this.data = data;
         field.text = data.nombre;
         bool isLocked = Data.Instance.databaseManager.IsCursoLocked(data.id);
+        if (forceUnBlock)
+            isLocked = false;
         locked.SetActive(isLocked);
         if (isLocked)
             GetComponent<Button>().interactable = false;

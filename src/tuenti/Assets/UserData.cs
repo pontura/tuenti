@@ -35,10 +35,7 @@ public class UserData : MonoBehaviour
         level = PlayerPrefs.GetInt("level", 0);
         curso_id = PlayerPrefs.GetInt("curso_id", 0);
         ventas = PlayerPrefs.GetInt("ventas", 0);
-
-        level = 10;
-        curso_id = 100;
-
+        
         GetComponent<Books>().Init(books);
     }
     public bool IsLogged()

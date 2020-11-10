@@ -29,16 +29,24 @@ public class CursosUI : UIScrollItemsScreen
     }
     public override void Init()
     {
-        base.Init();
         ResetCharacters();
+        LoadData();
     }
     void LoadData()
     {
-        Init();
+        Reset();
+        base.Init();
+        int id = 0;
+       
         foreach (DatabaseManager.CursoData cursoData in Data.Instance.databaseManager.cursosData.all)
         {
             UICursoButton newButton = (UICursoButton)AddItem();
-            newButton.OnInit(cursoData);
+            bool forceUnBlock = false;
+            
+            if (Data.Instance.userData.curso_id > 0 && id == 1)
+                forceUnBlock = true;
+            newButton.OnInit(cursoData, forceUnBlock);
+            id++;
         }
     }
     public override void OnUIButtonClicked(UIButton uiButton)

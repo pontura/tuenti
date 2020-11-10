@@ -8,10 +8,18 @@ public class TestsOld : UIScrollItemsScreen
     {
         Init();
         Reset();
+        int id = 0;
         foreach (DatabaseManager.CursoData d in Data.Instance.databaseManager.cursosData.all)
         {
-            UITestButton newButton = (UITestButton)AddItem();
-            newButton.OnInit(d);
+            if (id > 0)
+            {
+                bool forceActive = false;
+                if (id < 2)
+                    forceActive = true;
+                UITestButton newButton = (UITestButton)AddItem();
+                newButton.OnInit(d, forceActive);
+            }
+            id++;
         }
     }
     public override void OnUIButtonClicked(UIButton uiButton)

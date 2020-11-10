@@ -88,8 +88,18 @@ public class TriviaUI : UIScrollItemsScreen
                 }
             }
         }
-        if (data.type == DatabaseManager.TestData.types.MULTIPLE && !hasError)
-            correctAnswers++;
+        if (data.type == DatabaseManager.TestData.types.MULTIPLE)
+        {
+            if (!hasError)
+            {
+                correctAnswers++;
+                Events.PlaySound("ui", "btn_ok", false);
+            }
+            else
+            {
+                Events.PlaySound("ui", "btn_bad", false);
+            }
+        }
         
         Invoke("Delayed", 2);
     }
