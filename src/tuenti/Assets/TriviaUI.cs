@@ -10,6 +10,7 @@ public class TriviaUI : UIScrollItemsScreen
     DatabaseManager.TestData data;
     [HideInInspector] public List<UITriviaButton> all;
     public int correctAnswers;
+    public int totalAnswers;
     bool answered;
 
     private void Awake()
@@ -52,11 +53,13 @@ public class TriviaUI : UIScrollItemsScreen
             return;
         answered = true;
         bool hasError = false;
+        totalAnswers++;
         foreach (UITriviaButton uITriviaButton in all)
         {
             
             if (data.type == DatabaseManager.TestData.types.SINGLE)
             {
+                
                 if (uITriviaButton.isOn && uITriviaButton.data.value == 1)
                 {
                     uITriviaButton.SetResult(true);

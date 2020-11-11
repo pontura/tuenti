@@ -8,28 +8,49 @@ public class StarsManager : MonoBehaviour
 
     public GameObject container;
     public Image[] stars;
+    int value;
 
-    public void Init(bool isOn, float total, float qty)
+    public int GetValue()
+    {
+        if (stars[2].fillAmount == 1)
+            return 3;
+        else if (stars[1].fillAmount == 1)
+            return 2;
+        else if (stars[0].fillAmount == 1)
+            return 1;
+        else
+            return 0;
+    }
+    public void Init(bool isOn, int value)
+    {
+        foreach (Image s in stars)
+            s.fillAmount = 0;
+        if (value > 0)
+            stars[0].fillAmount = 1;
+        if (value > 1)
+            stars[1].fillAmount = 1;
+        if (value > 2)
+            stars[2].fillAmount = 1;
+    }
+    public void Calculate(bool isOn, float total, float qty)
     {
         container.SetActive(isOn);
         float valuePercent = qty/ total;
 
         print("valuePercent: " + valuePercent);
-
-
   
         if (valuePercent < 0.5f)
             SetStarts(0, 0, 0);
-        else if (valuePercent <= 0.5f)
-            SetStarts(0.5f, 0, 0);
+        //else if (valuePercent <= 0.5f)
+        //    SetStarts(1, 0, 0);
         else if (valuePercent <= 0.6f)
             SetStarts(1, 0, 0);
         else if (valuePercent <= 0.7f)
-            SetStarts(1, 0.5f, 0);
+            SetStarts(1, 0, 0);
         else if (valuePercent <= 0.8f)
             SetStarts(1, 1, 0);
         else if (valuePercent <= 0.9f)
-            SetStarts(1, 1, 0.5f);
+            SetStarts(1, 1, 0);
         else  
             SetStarts(1, 1, 1);
 
@@ -42,4 +63,5 @@ public class StarsManager : MonoBehaviour
         stars[1].fillAmount = v2;
         stars[2].fillAmount = v3;
     }
+    
 }

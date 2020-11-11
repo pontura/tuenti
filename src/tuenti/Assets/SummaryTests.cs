@@ -7,16 +7,22 @@ public class SummaryTests : UIPanelScreen
 {
     public Text field;
     int correctAnswers;
+    public StarsManager starsManager;
+
     public void OnInit()
     {
         Init();
-        correctAnswers = GetComponent<TriviaUI>().correctAnswers;
-        field.text = "Resultado " + correctAnswers + "/10";
+        TriviaUI triviaUI = GetComponent<TriviaUI>();
+        correctAnswers = triviaUI.correctAnswers;
+        int totalAnswers = triviaUI.totalAnswers;
+       // field.text = "Resultado " + correctAnswers + "/" + GetComponent<TriviaUI>().totalAnswers;
+        starsManager.Calculate(true, totalAnswers, correctAnswers);
     }
     public void OnReady()
     {
-        Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).SetScore(correctAnswers);
+        int starsValue = starsManager.GetValue();
+        Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).SetScore(starsValue);
         GetComponent<TestsUI>().GotoGame();
-        Data.Instance.userData.TestDone(Data.Instance.userData.curso_active_id, correctAnswers);
+        Data.Instance.userData.TestDone(Data.Instance.userData.curso_active_id, starsValue);
     }
 }

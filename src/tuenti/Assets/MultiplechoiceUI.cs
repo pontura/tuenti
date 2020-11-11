@@ -33,7 +33,6 @@ public class MultiplechoiceUI : UIScrollItemsScreen
             arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(data.id);
         foreach (DatabaseManager.MultiplechoiceData d in arr)
         {
-            print("__________" + d);
             UICursoContentButton newButton = (UICursoContentButton)AddItem();
             newButton.OnInit(d);
         }

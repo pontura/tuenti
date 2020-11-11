@@ -62,11 +62,18 @@ public class CursoContentUI : MonoBehaviour
             return;
         }
         DatabaseManager.CursoContentLineData d = data.all[id];
+
         foreach (GameObject go in characters)
             go.SetActive(false);
 
-        print("______character_id: " + d.character_id);
+        
         characters[d.character_id].SetActive(true);
+
+        List<DatabaseManager.MultiplechoiceData> arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(d.id);
+
+        print("Curso Content: character_id: " + d.character_id + "     d.isMultiplechoice: " + d.isMultiplechoice + "   arr: " + arr.Count + "  d.goto_id: " + d.goto_id);
+        if (arr.Count < 2)
+            d.isMultiplechoice = false;
 
         if (d.isMultiplechoice)
         {
@@ -74,7 +81,7 @@ public class CursoContentUI : MonoBehaviour
 
             if (type == types.VENTA)
             {
-                List<DatabaseManager.MultiplechoiceData> arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(d.id);
+                
                 int highscore = 0;
                 foreach (DatabaseManager.MultiplechoiceData multipleData in arr)
                 {
@@ -85,7 +92,7 @@ public class CursoContentUI : MonoBehaviour
             }
         }
         else
-            dialoguesUI.OnInit(d);
+            dialoguesUI.OnInit(d, type);
     }
     public void Next()
     {
