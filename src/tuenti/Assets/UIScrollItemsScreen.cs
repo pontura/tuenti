@@ -15,6 +15,7 @@ public class UIScrollItemsScreen : UIPanelScreen
     }
     public void CursoReady()
     {
+        Data.Instance.userData.SetNewCursoDone(Data.Instance.userData.curso_active_id);
         Data.Instance.userData.CursoDone();
         Init();
     }

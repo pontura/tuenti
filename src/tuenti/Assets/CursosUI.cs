@@ -37,13 +37,15 @@ public class CursosUI : UIScrollItemsScreen
         Reset();
         base.Init();
         int id = 0;
+
+        int totalCursosDone = Data.Instance.userData.cursosDone.Count;
        
         foreach (DatabaseManager.CursoData cursoData in Data.Instance.databaseManager.cursosData.all)
         {
             UICursoButton newButton = (UICursoButton)AddItem();
             bool forceUnBlock = false;
             
-            if (Data.Instance.userData.curso_id > 0 && id == 1)
+            if (id<4 && id < totalCursosDone+1)
                 forceUnBlock = true;
             newButton.OnInit(cursoData, forceUnBlock);
             id++;

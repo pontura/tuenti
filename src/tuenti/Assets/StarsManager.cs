@@ -21,8 +21,13 @@ public class StarsManager : MonoBehaviour
         else
             return 0;
     }
-    public void Init(bool isOn, int value)
+    public void Hide()
     {
+        container.SetActive(false);
+    }
+    public void Init(int value)
+    {
+        container.SetActive(true);
         foreach (Image s in stars)
             s.fillAmount = 0;
         if (value > 0)
@@ -32,9 +37,9 @@ public class StarsManager : MonoBehaviour
         if (value > 2)
             stars[2].fillAmount = 1;
     }
-    public void Calculate(bool isOn, float total, float qty)
+    public void Calculate(float total, float qty)
     {
-        container.SetActive(isOn);
+        container.SetActive(true);
         float valuePercent = qty/ total;
 
         print("valuePercent: " + valuePercent);

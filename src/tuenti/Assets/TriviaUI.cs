@@ -64,6 +64,7 @@ public class TriviaUI : UIScrollItemsScreen
                 {
                     uITriviaButton.SetResult(true);
                     correctAnswers++;
+                    Events.PlaySound("ui", "btn_ok", false);
                 }
                 else if (uITriviaButton.data.value == 1)
                 {
@@ -71,6 +72,7 @@ public class TriviaUI : UIScrollItemsScreen
                 }
                 else if (uITriviaButton.isOn)
                 {
+                    Events.PlaySound("ui", "btn_bad", false);
                     uITriviaButton.SetResult(false);
                 }
             }

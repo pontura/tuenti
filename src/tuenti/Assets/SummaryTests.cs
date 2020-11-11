@@ -16,7 +16,7 @@ public class SummaryTests : UIPanelScreen
         correctAnswers = triviaUI.correctAnswers;
         int totalAnswers = triviaUI.totalAnswers;
        // field.text = "Resultado " + correctAnswers + "/" + GetComponent<TriviaUI>().totalAnswers;
-        starsManager.Calculate(true, totalAnswers, correctAnswers);
+        starsManager.Calculate(totalAnswers, correctAnswers);
     }
     public void OnReady()
     {

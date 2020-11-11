@@ -16,19 +16,18 @@ public class UITestButton : UIButton
         //field.text = data.id + " - Score: " + data.test_score;
         DatabaseManager.CursoData cursoData = Data.Instance.databaseManager.GetCursoByID(data.id);
         field.text = cursoData.nombre;
-        bool testCanBeDone = false;
-        if (cursoData.test_score > 0)
-            testCanBeDone = true;
 
-        GetComponent<StarsManager>().Init(testCanBeDone, cursoData.test_score);
+        if (Data.Instance.userData.IsCursoDone(cursoData.id))
+            GetComponent<StarsManager>().Init(cursoData.test_score);
+        else
+            GetComponent<StarsManager>().Hide();
 
-        bool isLocked = Data.Instance.databaseManager.IsCursoLocked(data.id);
-        if (forceActive)
-            isLocked = false;
+        bool isReady = Data.Instance.userData.IsCursoDone(data.id);
+        if (forceActive)  isReady = true;
 
-        locked.SetActive(isLocked);
+        locked.SetActive(!isReady);
 
-        if (isLocked)
+        if (!isReady)
             GetComponent<Button>().interactable = false;
 
     }

@@ -15,6 +15,8 @@ public class UserData : MonoBehaviour
     public int curso_id;
     int totalBooks = 6;
 
+    public List<int> cursosDone;
+
     public List<int> books;
 
     private void Awake()
@@ -35,7 +37,15 @@ public class UserData : MonoBehaviour
         level = PlayerPrefs.GetInt("level", 0);
         curso_id = PlayerPrefs.GetInt("curso_id", 0);
         ventas = PlayerPrefs.GetInt("ventas", 0);
-        
+
+        string[] arr = PlayerPrefs.GetString("cursosDone").Split(","[0]);
+        print(arr.Length + PlayerPrefs.GetString("cursosDone"));
+        if (arr != null && arr.Length > 1)
+        {
+            foreach (string s in arr)
+                if(s != "") cursosDone.Add(int.Parse(s));
+        }
+
         GetComponent<Books>().Init(books);
     }
     public bool IsLogged()
@@ -102,5 +112,25 @@ public class UserData : MonoBehaviour
             return levels[levels.Length - 1];
         else
             return levels[level];
+    }
+    public void SetNewCursoDone(int curso_id)
+    {
+        foreach (int a in cursosDone)
+            if (a == curso_id)
+                return;
+        cursosDone.Add(curso_id);
+
+        string s = "";
+        foreach (int a in cursosDone)
+            s += a + ",";
+
+        PlayerPrefs.SetString("cursosDone", s);
+    }
+    public bool IsCursoDone(int curso_id)
+    {
+        foreach (int a in cursosDone)
+            if (a == curso_id)
+                return true;
+        return false;
     }
 }

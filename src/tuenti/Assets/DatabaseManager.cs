@@ -12,6 +12,7 @@ public class DatabaseManager : MonoBehaviour
     public TestsData testsData;
     public AnswersData answwersData;
     public VentasData ventasData;
+    
 
     [Serializable] public class CursosData  {
         public CursoData[] all;
