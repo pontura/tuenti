@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class UserData : MonoBehaviour
 {
     public bool isLogged;
-    public string[] levels;
+  
     public string username;
     public string dni;
     public int curso_active_id;
@@ -16,7 +17,6 @@ public class UserData : MonoBehaviour
     int totalBooks = 6;
 
     public List<int> cursosDone;
-
     public List<int> books;
 
     private void Awake()
@@ -99,19 +99,15 @@ public class UserData : MonoBehaviour
     {
         level++;
         PlayerPrefs.SetInt("level", level);
-        Events.OnConfirmation("Subiste de nivel!", null);
+        Events.OnConfirmation("¡Felicitaciones!, ahora sos " + Data.Instance.settings.levels[level].name, null);
     }
-    public void TestDone(int curso_id, int correct)
-    {
-        if (level == 0 && correct >= 6)
-            SetLevelUp();
-    }
+
     public string GetLevelName()
     {
-        if (level >= levels.Length)
-            return levels[levels.Length - 1];
+        if (level >= Data.Instance.settings.levels.Length)
+            return Data.Instance.settings.levels[Data.Instance.settings.levels.Length - 1].name;
         else
-            return levels[level];
+            return Data.Instance.settings.levels[level].name;
     }
     public void SetNewCursoDone(int curso_id)
     {
@@ -132,5 +128,23 @@ public class UserData : MonoBehaviour
             if (a == curso_id)
                 return true;
         return false;
+    }
+
+    public void CheckToUnlockLevel()
+    {
+        int id = 0;
+        int totalLevels = 0;
+        foreach (Settings.LevelData levelData in Data.Instance.settings.levels)
+        {
+            totalLevels += levelData.totalCursos;
+            foreach (DatabaseManager.CursoData d in Data.Instance.databaseManager.cursosData.all)
+            {
+                print("id: " + id + "  totalLevels: " + totalLevels + "  d.test_score: " + d.test_score + "  level: " + level);
+                if (level == id && id < totalLevels && d.test_score == 0 && (level != 0 && id != 0))
+                    return;
+                id++;
+            }            
+        }
+        SetLevelUp();
     }
 }

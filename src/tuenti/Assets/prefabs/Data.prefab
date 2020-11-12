@@ -4186,6 +4186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077345351746277835}
   - component: {fileID: 1077345351746277834}
+  - component: {fileID: 4376313548453930795}
   - component: {fileID: 1291916320180982532}
   - component: {fileID: 2887607743978202203}
   - component: {fileID: 2035643431289313794}
@@ -4193,6 +4194,7 @@ GameObject:
   - component: {fileID: 1175155315}
   - component: {fileID: 1175155321}
   - component: {fileID: 1077345352702986867}
+  - component: {fileID: 304613946}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -4233,6 +4235,35 @@ MonoBehaviour:
   userData: {fileID: 2887607743978202203}
   textsManager: {fileID: 1175155321}
   uiUserPanel: {fileID: 1077345352702986867}
+  settings: {fileID: 0}
+--- !u!114 &4376313548453930795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077345351746277833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37ca9fd37184384a8dfb89e73526f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - name: Vendedor Rookie
+    totalCursos: 3
+    totalVentas: 0
+  - name: Vendedor Principiante
+    totalCursos: 3
+    totalVentas: 2
+  - name: Vendedor Intermedio
+    totalCursos: 5
+    totalVentas: 6
+  - name: Vendedor Avanzado
+    totalCursos: 4
+    totalVentas: 10
+  - name: Vendedor Experto
+    totalCursos: 5
+    totalVentas: 15
 --- !u!114 &1291916320180982532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4270,12 +4301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLogged: 0
-  levels:
-  - Vendedor Rookie
-  - Vendedor Principiante
-  - 'Vendedor Intermedio '
-  - Vendedor Avanzado
-  - Vendedor Experto
   username: 
   dni: 
   curso_active_id: 0
@@ -4283,6 +4308,7 @@ MonoBehaviour:
   level: 0
   ventas: 0
   curso_id: 0
+  cursosDone: 
   books: 
 --- !u!114 &2035643431289313794
 MonoBehaviour:
@@ -4381,6 +4407,22 @@ MonoBehaviour:
   dniField: {fileID: 798806209}
   debugField: {fileID: 865533123}
   uiBooks: {fileID: 1658929904747626771}
+--- !u!114 &304613946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077345351746277833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0f10e3c244bf545a2e5952c188e29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - sourceName: ui
+    audioSource: {fileID: 0}
+    volume: 1
 --- !u!1 &2138334015259331067
 GameObject:
   m_ObjectHideFlags: 0

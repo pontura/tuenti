@@ -13,6 +13,7 @@ public class Data : MonoBehaviour
     public UserData userData;
     public TextsManager textsManager;
     public UIUserPanel uiUserPanel;
+    [HideInInspector] public Settings settings;
 
     public static Data Instance
     {
@@ -41,6 +42,7 @@ public class Data : MonoBehaviour
         DontDestroyOnLoad(this);
         databaseManager = GetComponent<DatabaseManager>();
         userData = GetComponent<UserData>();
+        settings = GetComponent<Settings>();
     }
     private void Start()
     {

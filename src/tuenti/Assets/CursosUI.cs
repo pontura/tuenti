@@ -47,6 +47,9 @@ public class CursosUI : UIScrollItemsScreen
             
             if (id<4 && id < totalCursosDone+1)
                 forceUnBlock = true;
+            if(Data.Instance.userData.level>0)
+                forceUnBlock = true;
+
             newButton.OnInit(cursoData, forceUnBlock);
             id++;
         }
