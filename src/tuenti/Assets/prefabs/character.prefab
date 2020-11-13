@@ -1881,7 +1881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8847499334522959826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2096,6 +2096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2995088687729954073}
   - component: {fileID: 5861403965081939923}
+  - component: {fileID: 1097235385}
   m_Layer: 5
   m_Name: character
   m_TagString: Untagged
@@ -2146,6 +2147,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1097235385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981654295197072008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1dc075ce8caf44eaa8bf078fbb7b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts:
+  - type: 0
+    partID: 0
+    all:
+    - {fileID: 4110865413930709617}
+    - {fileID: 5340731714906782336}
+    - {fileID: 5498046355687602572}
+  - type: 2
+    partID: 0
+    all:
+    - {fileID: 1941119607}
+    - {fileID: 1586040070}
+    - {fileID: 1129746999}
+  - type: 3
+    partID: 0
+    all:
+    - {fileID: 942478918}
+    - {fileID: 1457063154}
+    - {fileID: 601648168}
+    - {fileID: 1651080676}
+  - type: 4
+    partID: 0
+    all:
+    - {fileID: 2016206751}
+    - {fileID: 2428136330237977965}
+    - {fileID: 5962349273575127340}
 --- !u!1 &7964183599860612425
 GameObject:
   m_ObjectHideFlags: 0

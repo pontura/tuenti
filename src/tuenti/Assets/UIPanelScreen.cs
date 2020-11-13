@@ -12,6 +12,7 @@ public class UIPanelScreen : MonoBehaviour
     }
     public virtual void Init()
     {
+        print("init " + panel.gameObject.name);
         panel.SetActive(true);
     }
     public virtual void Close()

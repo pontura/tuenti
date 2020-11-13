@@ -92,4 +92,8 @@ public class UIUserPanel : UIPanelScreen
     {
         debugField.text = "";
     }
+    public void OnCustomizer()
+    {
+        GetComponent<Customizer>().SetOn();
+    }
 }

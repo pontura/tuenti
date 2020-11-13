@@ -14,4 +14,5 @@ public static class Events
     public static System.Action<string, System.Action> OnConfirmation = delegate { };
     public static System.Action<string, string, bool> PlaySound = delegate { };
     public static System.Action<string, float> ChangeVolume = delegate { };
+    public static System.Action<CharacterCustomizer.Types, int> OnCustomize = delegate { };
 }
