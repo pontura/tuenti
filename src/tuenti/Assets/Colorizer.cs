@@ -11,16 +11,20 @@ public class Colorizer : MonoBehaviour
 
 	void OnEnable()
 	{
-		if (colors.Length == 0 || parts.Length == 0)
-			return;
-		Color c = colors [Random.Range (0, colors.Length)];
+        StartCoroutine(WaitToColor());
+	}
+    IEnumerator WaitToColor()
+    {
+        yield return new WaitForEndOfFrame();
+        Color c = colors[Random.Range(0, colors.Length)];
 
         foreach (Image sr in ui_parts)
         {
             sr.color = c;
         }
-        foreach (SpriteRenderer sr in parts) {
-			sr.color = c;
-		}
-	}
+        foreach (SpriteRenderer sr in parts)
+        {
+            sr.color = c;
+        }
+    }
 }
