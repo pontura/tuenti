@@ -14,11 +14,14 @@ public class Swapper : MonoBehaviour
 		GameObject go;
 
 		foreach (GameObject _go in parts) {
+            if(_go != null)
 			_go.SetActive (false);
 		}
 
 		go = parts [Random.Range (0, parts.Length)];
-		go.SetActive (true);
+
+        if(go != null)
+		    go.SetActive (true);
 
 	}
 }

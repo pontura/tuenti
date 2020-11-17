@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialoguesUI : UIPanelScreen
 {
-    public Animator anim;
+    Animator anim;
     public Text avatarName;
     public Text field;
     CursoContentUI cursoContentUI;
@@ -15,11 +15,14 @@ public class DialoguesUI : UIPanelScreen
     List<DatabaseManager.MultiplechoiceData> arr;
 
     void Start()
-    {
+    {        
         cursoContentUI = GetComponent<CursoContentUI>();
     }
     public void OnInit(DatabaseManager.CursoContentLineData data, CursoContentUI.types type)
     {
+
+        anim = GetComponent<CursoContentUI>().client.GetComponentInChildren<Animator>();
+
         this.type = type;
         this.data = data;
         Init();

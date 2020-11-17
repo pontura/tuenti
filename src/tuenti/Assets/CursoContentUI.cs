@@ -14,6 +14,8 @@ public class CursoContentUI : MonoBehaviour
     public GameObject mentor1;
     public GameObject mentor2;
 
+    public GameObject client;
+
     public enum types
     {
         CURSO,
@@ -26,6 +28,8 @@ public class CursoContentUI : MonoBehaviour
         dialoguesUI = GetComponent<DialoguesUI>();
         multiplechoiceUI = GetComponent<MultiplechoiceUI>();
     }
+    Vector3 clientPos;
+    Vector3 conejoPos;
     public void Init(types type)
     {
         this.type = type;
@@ -46,9 +50,21 @@ public class CursoContentUI : MonoBehaviour
         }
         else
         {
+            foreach (GameObject go in characters)
+                go.SetActive(true);
             data = Data.Instance.databaseManager.GetVentaContentActive();
-
+            
         }
+        if (characters.Length > 2)
+            client = characters[Random.Range(1, 3)];
+        else
+            client = characters[1];
+
+        if (clientPos == Vector3.zero)
+            clientPos = client.transform.localPosition;
+        if(conejoPos == Vector3.zero)
+            conejoPos = characters[0].transform.localPosition;
+
         SetOn();
     }
     void SetOn()
@@ -64,10 +80,13 @@ public class CursoContentUI : MonoBehaviour
         DatabaseManager.CursoContentLineData d = data.all[id];
 
         foreach (GameObject go in characters)
-            go.SetActive(false);
+            go.transform.localPosition = new Vector3(1000, 0, 0);
 
-        
-        characters[d.character_id].SetActive(true);
+        if (d.character_id == 1)
+            client.transform.localPosition = clientPos;
+        else
+            characters[0].transform.localPosition = conejoPos;
+
 
         List<DatabaseManager.MultiplechoiceData> arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(d.id);
 

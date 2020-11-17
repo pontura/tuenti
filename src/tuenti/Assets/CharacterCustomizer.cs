@@ -53,8 +53,6 @@ public class CharacterCustomizer : MonoBehaviour
     }
     void SetCustomize(Types type, int partID)
     {
-        print("abre" + type + " id: " + partID);
-
         Parts parts = GetPart(type);
         int id = 0;
         foreach (GameObject go in parts.all)

@@ -12,6 +12,22 @@ public class CustomizerButton : MonoBehaviour
     {
         Button b = gameObject.GetComponent<Button>();
         b.onClick.AddListener(delegate () { OnClicked(); });
+        bool isLocked;
+        if (part.partID == -1)
+            isLocked = false;
+        else
+            isLocked = Data.Instance.userData.IsCostumizationLocked(part.type, part.partID);
+
+        if (isLocked)
+        {
+            locked.SetActive(true);
+            GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            locked.SetActive(false);
+            GetComponent<Button>().interactable = true;
+        }
     }
     void OnClicked()
     {

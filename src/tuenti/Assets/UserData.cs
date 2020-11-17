@@ -147,4 +147,28 @@ public class UserData : MonoBehaviour
         }
         SetLevelUp();
     }
+    public bool IsCostumizationLocked(CharacterCustomizer.Types type, int id)
+    {
+        bool locked = true;
+        switch(type)
+        {
+            case CharacterCustomizer.Types.HATS:
+                if (level >= 0 && id == 0) locked = false;
+                break;
+            case CharacterCustomizer.Types.GLASSES:
+                if (level >= 0 && id == 0) locked = false;
+                break;
+            case CharacterCustomizer.Types.COLLARS:
+                if (level >= 0 && id == 0) locked = false;
+                if (level >= 1 && id == 1) locked = false;
+                break;
+            case CharacterCustomizer.Types.MOUSTACHES:
+                if (level >= 1 && id == 0) locked = false;
+                break;
+            case CharacterCustomizer.Types.EARINGS:
+                if (level >= 1 && id == 1) locked = false;
+                break;
+        }
+        return locked;
+    }
 }
