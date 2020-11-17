@@ -124,6 +124,7 @@ public class UserData : MonoBehaviour
     }
     public bool IsCursoDone(int curso_id)
     {
+        print("______IsCursoDone " + curso_id);
         foreach (int a in cursosDone)
             if (a == curso_id)
                 return true;
@@ -132,18 +133,25 @@ public class UserData : MonoBehaviour
 
     public void CheckToUnlockLevel()
     {
+        int levelID = 0;
         int id = 0;
         int totalLevels = 0;
         foreach (Settings.LevelData levelData in Data.Instance.settings.levels)
         {
-            totalLevels += levelData.totalCursos;
+            totalLevels = levelData.totalCursos;
             foreach (DatabaseManager.CursoData d in Data.Instance.databaseManager.cursosData.all)
             {
-                print("id: " + id + "  totalLevels: " + totalLevels + "  d.test_score: " + d.test_score + "  level: " + level);
-                if (level == id && id < totalLevels && d.test_score == 0 && (level != 0 && id != 0))
-                    return;
-                id++;
-            }            
+                if (level == levelID)
+                {
+                    print("id: " + id + "   levelID: " + levelID + "   totalLevels: " + totalLevels + "   d.test_score: " + d.test_score + "   level: " + level);
+                    if (levelID == 0 && id == 0)
+                        print("first level");
+                    else if (id < totalLevels && d.test_score == 0)
+                        return;                    
+                    id++;
+                }
+            }
+            levelID++;
         }
         SetLevelUp();
     }

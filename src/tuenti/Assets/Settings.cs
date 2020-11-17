@@ -13,4 +13,15 @@ public class Settings : MonoBehaviour
         public int totalCursos;
         public int totalVentas;
     }
+    public List<int> GetCursosIdByLevel()
+    {
+        List<int> arr = new List<int>();
+        int num = 0;
+        foreach(LevelData ld in levels)
+        {
+            num += ld.totalCursos;
+            arr.Add(num);
+        }
+        return arr;
+    }
 }

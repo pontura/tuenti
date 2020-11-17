@@ -38,7 +38,6 @@ public class CharacterCustomizer : MonoBehaviour
             string typeName = PieceTypeNames[i];
             int partID = PlayerPrefs.GetInt(typeName, -1);
             Types t = (Types)i;
-            print(t);
             Parts p = GetPart(t);
             if(p!= null)
                 p.partID = partID;

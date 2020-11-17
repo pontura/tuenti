@@ -48,4 +48,9 @@ public class Data : MonoBehaviour
     {
         databaseManager.Init();
     }
+    public void RestartApp()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+    }
 }

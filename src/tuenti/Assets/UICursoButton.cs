@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UICursoButton : UIButton
 {
     public GameObject locked;
+    public GameObject doneGameObject;
     public Image image;
     public Text field;
     public DatabaseManager.CursoData data;
@@ -22,5 +23,9 @@ public class UICursoButton : UIButton
         if (isLocked)
             GetComponent<Button>().interactable = false;
         image.sprite = characters[data.character_id];
+        if (Data.Instance.userData.IsCursoDone(data.id))
+            doneGameObject.SetActive(true);
+        else
+            doneGameObject.SetActive(false);
     }
 }

@@ -158,7 +158,7 @@ public class DatabaseManager : MonoBehaviour
         else
             LoginOk(false);
     }
-    public void InitLoadingContent()
+    void InitLoadingContent()
     {
         StartCoroutine( LoadJson(url + "getCursos.php", OnCursosDone) );
     }
@@ -176,28 +176,16 @@ public class DatabaseManager : MonoBehaviour
     void OnMultiplechoiceDone(string data)
     {
         multiplechoiceData = JsonUtility.FromJson<MultiplechoicesData>(data);
-        StartCoroutine(LoadJsonCursosContent(GetTests));
-    }
-    void GetTests()
-    {
         StartCoroutine(LoadJson(url + "getTests.php", GetTestsDone));
     }
     void GetTestsDone(string data)
     {
         testsData = JsonUtility.FromJson<TestsData>(data);
-        StartCoroutine(LoadJsonCursosContent(GetAnswers));
-    }
-    void GetAnswers()
-    {
         StartCoroutine(LoadJson(url + "getAnswers.php", GetAnswersDone));
     }
     void GetAnswersDone(string data)
     {
         answwersData = JsonUtility.FromJson<AnswersData>(data);
-        StartCoroutine(LoadJsonCursosContent(GetVentas));
-    }
-    void GetVentas()
-    {
         StartCoroutine(LoadJson(url + "getVentas.php", GetVentasDone));
     }
     void GetVentasDone(string data)

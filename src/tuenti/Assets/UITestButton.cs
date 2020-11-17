@@ -17,12 +17,13 @@ public class UITestButton : UIButton
         DatabaseManager.CursoData cursoData = Data.Instance.databaseManager.GetCursoByID(data.id);
         field.text = cursoData.nombre;
 
-        if (Data.Instance.userData.IsCursoDone(cursoData.id))
+        bool isReady = Data.Instance.userData.IsCursoDone(data.id);
+
+        if (isReady)
             GetComponent<StarsManager>().Init(cursoData.test_score);
         else
             GetComponent<StarsManager>().Hide();
-
-        bool isReady = Data.Instance.userData.IsCursoDone(data.id);
+        
         if (forceActive)  isReady = true;
 
         locked.SetActive(!isReady);
