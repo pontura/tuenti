@@ -13,12 +13,7 @@ public class UIScrollItemsScreen : UIPanelScreen
         base.Init();
         panel.SetActive(true);
     }
-    public void CursoReady()
-    {
-        Data.Instance.userData.SetNewCursoDone(Data.Instance.userData.curso_active_id);
-        Data.Instance.userData.CursoDone();
-        Init();
-    }
+    
     public void Reset()
     {
         Utils.RemoveAllChildsIn(container);

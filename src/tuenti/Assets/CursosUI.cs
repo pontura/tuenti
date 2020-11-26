@@ -71,20 +71,29 @@ public class CursosUI : UIScrollItemsScreen
         UICursoSeparator s = Instantiate(separation, container);
         s.Init(id);
     }
+
+    public DatabaseManager.CursoData data;
     public override void OnUIButtonClicked(UIButton uiButton)
     {        
         UICursoButton button = (UICursoButton)uiButton;
-
-        if(button.data.video != "")
-            Events.PlayVideo("d6Wu20mn5aw", OnDone);
-
+        this.data = button.data;
         Data.Instance.userData.curso_active_id = button.data.id;
         characters[button.data.character_id].SetActive(true);
         GetComponent<CursoContentUI>().Init(CursoContentUI.types.CURSO);
-        Close();
+        Close();       
     }
-    void OnDone()
+    public void OnDone()
     {
-
+        Data.Instance.userData.SetNewCursoDone(Data.Instance.userData.curso_active_id);
+        Data.Instance.userData.CursoDone();
+        GotoGame(); // Init();
+        GetComponent<VideoManager>().Close();
+    }
+    public void CursoReady()
+    {
+        if (data.video != "")
+            Events.PlayVideo(data.video, OnDone);
+        else
+            OnDone();
     }
 }

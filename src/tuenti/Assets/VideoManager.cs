@@ -17,7 +17,8 @@ public class VideoManager : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Events.PlayVideo -= PlayVideo;        
+        Events.PlayVideo -= PlayVideo;
+        videoPlayer.prepareCompleted -= Prepared;
     }
     void PlayVideo(string url, System.Action OnDone)
     {
@@ -27,14 +28,13 @@ public class VideoManager : MonoBehaviour
     }
     void OnVideoDone(string url)
     {
-        print("__________________OnVideoDone");
          videoPlayer.url = url;
          videoPlayer.Prepare();
     }    
     public void Close()
     {
+        videoPlayer.Stop();
         panel.SetActive(false);
-        OnDone();
     }
     void Prepared(UnityEngine.Video.VideoPlayer vp) {
             videoPlayer.Play();
