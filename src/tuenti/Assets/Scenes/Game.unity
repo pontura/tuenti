@@ -360,8 +360,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.8899999, y: 0.77, z: 27.8}
+  m_Center: {x: 1.5, y: 0, z: 0}
 --- !u!212 &59255939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144543679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.8400002, z: 0}
+  m_LocalPosition: {x: 0, y: -3.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1648941241}
@@ -1750,7 +1750,6 @@ GameObject:
   m_Component:
   - component: {fileID: 388936407}
   - component: {fileID: 388936409}
-  - component: {fileID: 388936408}
   m_Layer: 0
   m_Name: biblioteca (1)
   m_TagString: Untagged
@@ -1772,19 +1771,6 @@ Transform:
   m_Father: {fileID: 597168956}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &388936408
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388936406}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &388936409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2196,7 +2182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 461031995}
   - component: {fileID: 461031997}
-  - component: {fileID: 461031996}
   m_Layer: 0
   m_Name: biblioteca (1)
   m_TagString: Untagged
@@ -2218,19 +2203,6 @@ Transform:
   m_Father: {fileID: 59255937}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &461031996
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461031994}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &461031997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3016,8 +2988,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.8899999, y: 0.77, z: 27.8}
+  m_Center: {x: 1.5, y: 0, z: 0}
 --- !u!212 &597168958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3321,7 +3293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 667905042}
   - component: {fileID: 667905044}
-  - component: {fileID: 667905043}
   m_Layer: 0
   m_Name: biblioteca (3)
   m_TagString: Untagged
@@ -3343,19 +3314,6 @@ Transform:
   m_Father: {fileID: 59255937}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &667905043
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667905041}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &667905044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9614,7 +9572,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1166420179}
   - component: {fileID: 1166420181}
-  - component: {fileID: 1166420180}
   m_Layer: 0
   m_Name: biblioteca (2)
   m_TagString: Untagged
@@ -9636,19 +9593,6 @@ Transform:
   m_Father: {fileID: 1226766153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1166420180
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166420178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1166420181
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9709,7 +9653,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1168483743}
   - component: {fileID: 1168483745}
-  - component: {fileID: 1168483744}
   m_Layer: 0
   m_Name: biblioteca (3)
   m_TagString: Untagged
@@ -9731,19 +9674,6 @@ Transform:
   m_Father: {fileID: 597168956}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1168483744
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168483742}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1168483745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10004,8 +9934,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.89, y: 0.77, z: 27.8}
+  m_Center: {x: 1.0000001, y: 0, z: 0}
 --- !u!212 &1226766155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11610,6 +11540,10 @@ MonoBehaviour:
   - {fileID: 774430234}
   - {fileID: 346397316}
   - {fileID: 503576966}
+  - {fileID: 1226766152}
+  - {fileID: 597168955}
+  - {fileID: 59255936}
+  - {fileID: 1809724849}
   limits: {x: 4, y: 3.5}
 --- !u!4 &1648941241
 Transform:
@@ -12479,7 +12413,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1798645506}
   - component: {fileID: 1798645508}
-  - component: {fileID: 1798645507}
   m_Layer: 0
   m_Name: biblioteca (2)
   m_TagString: Untagged
@@ -12501,19 +12434,6 @@ Transform:
   m_Father: {fileID: 597168956}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1798645507
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798645505}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1798645508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12607,7 +12527,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 0.87, z: 1}
+  m_Size: {x: 0.76, y: 0.87, z: 9.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1842759899
 GameObject:
@@ -13355,7 +13275,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2001228256}
   - component: {fileID: 2001228258}
-  - component: {fileID: 2001228257}
   m_Layer: 0
   m_Name: biblioteca (2)
   m_TagString: Untagged
@@ -13377,19 +13296,6 @@ Transform:
   m_Father: {fileID: 59255937}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2001228257
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001228255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &2001228258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13552,7 +13458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014946394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62, y: 0.13, z: 0}
+  m_LocalPosition: {x: -0.89, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1648941241}
@@ -13918,7 +13824,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2114060869}
   - component: {fileID: 2114060871}
-  - component: {fileID: 2114060870}
   m_Layer: 0
   m_Name: biblioteca (1)
   m_TagString: Untagged
@@ -13940,19 +13845,6 @@ Transform:
   m_Father: {fileID: 1226766153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2114060870
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114060868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.89, y: 0.77, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &2114060871
 SpriteRenderer:
   m_ObjectHideFlags: 0
