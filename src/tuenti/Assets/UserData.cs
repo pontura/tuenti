@@ -162,19 +162,28 @@ public class UserData : MonoBehaviour
         {
             case CharacterCustomizer.Types.HATS:
                 if (level >= 0 && id == 0) locked = false;
+                if (level >= 3 && id == 1) locked = false;
+                if (level >= 4 && id == 2) locked = false;
                 break;
             case CharacterCustomizer.Types.GLASSES:
                 if (level >= 0 && id == 0) locked = false;
+                if (level >= 2 && id == 1) locked = false;
+                if (level >= 4 && id == 2) locked = false;
                 break;
             case CharacterCustomizer.Types.COLLARS:
                 if (level >= 0 && id == 0) locked = false;
                 if (level >= 1 && id == 1) locked = false;
+                if (level >= 3 && id == 2) locked = false;
                 break;
             case CharacterCustomizer.Types.MOUSTACHES:
                 if (level >= 1 && id == 0) locked = false;
+                if (level >= 2 && id == 1) locked = false;
+                if (level >= 3 && id == 2) locked = false;
                 break;
             case CharacterCustomizer.Types.EARINGS:
                 if (level >= 1 && id == 1) locked = false;
+                if (level >= 2 && id == 0) locked = false;
+                if (level >= 4 && id == 2) locked = false;
                 break;
         }
         return locked;

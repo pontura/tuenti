@@ -43,9 +43,16 @@ public class CharacterCustomizer : MonoBehaviour
                 p.partID = partID;
         }
         foreach (Parts p in parts)
-            OnCustomize(p.type, p.partID);
+            OnSetCustomize(p.type, p.partID);
     }
     void OnCustomize(Types type, int partID)
+    {
+        if (PlayerPrefs.GetInt(type.ToString(), 0) == partID)
+            partID = -1;
+
+        OnSetCustomize(type, partID);
+    }
+    void OnSetCustomize(Types type, int partID)
     {
         PlayerPrefs.SetInt(type.ToString(), partID);
         SetCustomize(type, partID);

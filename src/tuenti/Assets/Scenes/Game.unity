@@ -360,7 +360,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8899999, y: 0.77, z: 27.8}
+  m_Size: {x: 3.8899999, y: 0.1, z: 27.8}
   m_Center: {x: 1.5, y: 0, z: 0}
 --- !u!212 &59255939
 SpriteRenderer:
@@ -2089,7 +2089,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.83, y: 0.85, z: 23.01}
+  m_Size: {x: 3.83, y: 1.48, z: 23.01}
   m_Center: {x: 0, y: -0.14, z: -0.87}
 --- !u!1 &423125357
 GameObject:
@@ -2988,7 +2988,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8899999, y: 0.77, z: 27.8}
+  m_Size: {x: 3.8899999, y: 0.1, z: 27.8}
   m_Center: {x: 1.5, y: 0, z: 0}
 --- !u!212 &597168958
 SpriteRenderer:
@@ -9934,7 +9934,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.89, y: 0.77, z: 27.8}
+  m_Size: {x: 2.89, y: 0.1, z: 27.8}
   m_Center: {x: 1.0000001, y: 0, z: 0}
 --- !u!212 &1226766155
 SpriteRenderer:
@@ -11734,7 +11734,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.9
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1685331453
@@ -12156,8 +12156,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 0.49, z: 23.01}
-  m_Center: {x: 0, y: -0.66, z: -0.87}
+  m_Size: {x: 1.61, y: 1.3, z: 23.01}
+  m_Center: {x: 0, y: -0.5, z: -0.87}
 --- !u!1 &1735856077
 GameObject:
   m_ObjectHideFlags: 0
