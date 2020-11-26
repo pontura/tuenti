@@ -9,8 +9,10 @@ public class MapZone : MonoBehaviour
     public GameObject academyPoint;
     public GameObject testsPoint;
     public GameObject cursosPoint;
+    public GameObject ventasPoint;
     public GameObject[] gosToArrenge;
     public Vector2 limits;
+    public bool isCity;
 
     private void Start()
     {
@@ -27,18 +29,36 @@ public class MapZone : MonoBehaviour
         gameObject.SetActive(true);
         startingPoint.SetActive(false);
         Game.Instance.character.limits = limits;
-        switch(Data.Instance.lastScene)
+        if (isCity)
         {
-            case "Tests":
-                SetAvatarTo(testsPoint);
-                break;
-            case "Cursos":
-                SetAvatarTo(cursosPoint);
-                break;
-            default:
-                SetAvatarTo(startingPoint);
-                break;
-        }       
+            switch (Data.Instance.lastScene)
+            {
+                case "Ventas":
+                    SetAvatarTo(ventasPoint);
+                    break;
+                case "Game":
+                    SetAvatarTo(cursosPoint);
+                    break;
+                default:
+                    SetAvatarTo(startingPoint);
+                    break;
+            }
+        }
+        else
+        {
+            switch (Data.Instance.lastScene)
+            {
+                case "Tests":
+                    SetAvatarTo(testsPoint);
+                    break;
+                case "Cursos":
+                    SetAvatarTo(academyPoint);
+                    break;
+                default:
+                    SetAvatarTo(startingPoint);
+                    break;
+            }
+        }
     }
     public void SetAvatarTo(GameObject go)
     {

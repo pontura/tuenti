@@ -14,6 +14,7 @@ public class Data : MonoBehaviour
     public TextsManager textsManager;
     public UIUserPanel uiUserPanel;
     [HideInInspector] public Settings settings;
+    public Intro intro;
 
     public static Data Instance
     {
@@ -46,6 +47,7 @@ public class Data : MonoBehaviour
     }
     private void Start()
     {
+        intro.Init();
         databaseManager.Init();
     }
     public void RestartApp()
