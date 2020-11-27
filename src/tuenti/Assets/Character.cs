@@ -54,7 +54,15 @@ public class Character : MonoBehaviour
         if(other.gameObject.tag == "Costumer")
         {
             Costumer c = other.gameObject.GetComponent<Costumer>();
-            Data.Instance.LoadLevel("Ventas");
+            if (c.isReady)
+            {
+                Events.OnConfirmation("Ya tengo mi chip Tuenti", null);
+            }
+            else
+            {
+                Data.Instance.userData.costumerID = c.id;
+                Data.Instance.LoadLevel("Ventas");
+            }
         }
     }
 }

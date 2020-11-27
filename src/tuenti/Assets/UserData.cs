@@ -18,6 +18,8 @@ public class UserData : MonoBehaviour
 
     public List<int> cursosDone;
     public List<int> books;
+    public List<int> costumersReady;
+    public int costumerID;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class UserData : MonoBehaviour
     private void OnDestroy()
     {
         Events.GetBook -= GetBook;
+    }
+    public void ResetCostumersReady()
+    {
+        for (int a = 0; a < costumersReady.Count; a++)
+            costumersReady[a] = 0;
     }
     void Start()
     {

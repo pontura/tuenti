@@ -13,6 +13,10 @@ public class Settings : MonoBehaviour
         public int totalCursos;
         public int totalVentas;
     }
+    public Color costumerDoneColor;
+    public Color costumerIdleColor;
+
+
     public List<int> GetCursosIdByLevel()
     {
         List<int> arr = new List<int>();

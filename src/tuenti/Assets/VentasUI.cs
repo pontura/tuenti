@@ -13,6 +13,9 @@ public class VentasUI : MonoBehaviour
     }
     public void OnReady(bool success)
     {
+        if (success)
+            Data.Instance.userData.costumersReady[Data.Instance.userData.costumerID] = 1;
+
         Data.Instance.userData.VentaDone(success);
         Data.Instance.LoadLevel("Game");
         if (success)

@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class Costumer : Character
 {
+    public int id;
     public int pathID;
     public Vector2[] paths;
     Vector2 dest;
+    public bool isReady;
+    public SpriteRenderer[] colorizable;
 
     public void Init()
     {
         Loop();
+    }
+    public void SetState(bool isReady)
+    {
+        this.isReady = isReady;
+        if(isReady)
+        {
+            foreach (SpriteRenderer a in colorizable)
+                a.color = Data.Instance.settings.costumerDoneColor;
+        }
+        else
+        {
+            foreach (SpriteRenderer a in colorizable)
+                a.color = Data.Instance.settings.costumerIdleColor;
+        }
     }
     void Loop()
     {
