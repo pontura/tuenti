@@ -25,7 +25,7 @@ public class Data : MonoBehaviour
     }
     public void LoadLevel(string aLevelName)
     {       
-        lastScene = newScene;
+        lastScene = SceneManager.GetActiveScene().name;
         this.newScene = aLevelName;
          SceneManager.LoadScene(newScene);
     }

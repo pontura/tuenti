@@ -37,7 +37,7 @@ public class MapZone : MonoBehaviour
                     SetAvatarTo(ventasPoint);
                     break;
                 case "Game":
-                    SetAvatarTo(cursosPoint);
+                    SetAvatarTo(academyPoint);
                     break;
                 default:
                     SetAvatarTo(startingPoint);
