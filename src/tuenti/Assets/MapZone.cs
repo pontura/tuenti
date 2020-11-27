@@ -52,7 +52,7 @@ public class MapZone : MonoBehaviour
                     SetAvatarTo(testsPoint);
                     break;
                 case "Cursos":
-                    SetAvatarTo(academyPoint);
+                    SetAvatarTo(cursosPoint);
                     break;
                 default:
                     SetAvatarTo(startingPoint);
