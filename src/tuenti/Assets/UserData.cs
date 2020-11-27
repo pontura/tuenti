@@ -162,6 +162,22 @@ public class UserData : MonoBehaviour
         }
         SetLevelUp();
     }
+    public string GetLevelUnlockConditionTitle(int levelID)
+    {
+        switch(levelID)
+        {
+            case 1:
+                return "(Tests + 1 venta)";
+            case 2:
+                return "(Tests + 3 ventas)";
+            case 3:
+                return "(Tests + 7 ventas)";
+            case 4:
+                return "(Tests + 10 ventas)";
+            default:
+                return "";
+        }
+    }
     public bool IsCostumizationLocked(CharacterCustomizer.Types type, int id)
     {
         bool locked = true;
