@@ -27,8 +27,13 @@ public class MapManager : MonoBehaviour
         GetComponent<CostumersManager>().Init();
         if (id == 1)
         {
+            Data.Instance.tutorialManager.OnEnterAcademy();
             Data.Instance.lastScene = "Game";
             Data.Instance.userData.ResetCostumersReady();
+        }
+        else
+        {
+            Data.Instance.tutorialManager.OnEnterCity();
         }
     }
     void SetRoom()

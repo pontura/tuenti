@@ -15,6 +15,7 @@ public class Data : MonoBehaviour
     public UIUserPanel uiUserPanel;
     [HideInInspector] public Settings settings;
     public Intro intro;
+    public TutorialManager tutorialManager;
 
     public static Data Instance
     {
@@ -44,6 +45,7 @@ public class Data : MonoBehaviour
         databaseManager = GetComponent<DatabaseManager>();
         userData = GetComponent<UserData>();
         settings = GetComponent<Settings>();
+        tutorialManager = GetComponent<TutorialManager>();
     }
     private void Start()
     {

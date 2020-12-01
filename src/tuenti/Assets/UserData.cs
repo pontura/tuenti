@@ -87,6 +87,7 @@ public class UserData : MonoBehaviour
     {
         if (success)
         {
+            Data.Instance.tutorialManager.OnVentaDone();
             ventas++;
             PlayerPrefs.SetInt("ventas", ventas);
         }
@@ -105,6 +106,7 @@ public class UserData : MonoBehaviour
     public void SetLevelUp()
     {
         level++;
+        Data.Instance.tutorialManager.OnLevelUp();
         PlayerPrefs.SetInt("level", level);
         Events.OnConfirmation("¡Felicitaciones!, ahora sos " + Data.Instance.settings.levels[level].name, null);
     }
