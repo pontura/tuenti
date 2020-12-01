@@ -87,8 +87,12 @@ public class CursoContentUI : MonoBehaviour
         else
             characters[0].transform.localPosition = conejoPos;
 
+        List<DatabaseManager.MultiplechoiceData> arr;
 
-        List<DatabaseManager.MultiplechoiceData> arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(d.id);
+        if (type == types.CURSO)
+            arr = Data.Instance.databaseManager.GetMultiplechoiceDataByCursoID(d.id);
+        else
+            arr = Data.Instance.databaseManager.GetMultiplechoiceDataByVentaID(d.id);
 
         print("Curso Content: character_id: " + d.character_id + "     d.isMultiplechoice: " + d.isMultiplechoice + "   arr: " + arr.Count + "  d.goto_id: " + d.goto_id);
         if (arr.Count < 2)
