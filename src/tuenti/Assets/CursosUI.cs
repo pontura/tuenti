@@ -86,6 +86,7 @@ public class CursosUI : UIScrollItemsScreen
     {
         Data.Instance.userData.SetNewCursoDone(Data.Instance.userData.curso_active_id);
         Data.Instance.userData.CursoDone();
+        Data.Instance.tutorialManager.OnCursoDone();
         GotoGame(); // Init();
         GetComponent<VideoManager>().Close();
     }

@@ -24,5 +24,8 @@ public class SummaryTests : UIPanelScreen
         Data.Instance.databaseManager.GetCursoByID(Data.Instance.userData.curso_active_id).SetScore(starsValue);
         GetComponent<TestsUI>().GotoGame();
         Data.Instance.userData.CheckToUnlockLevel();
+
+        if(starsValue>0)
+            Data.Instance.tutorialManager.OnTestDone();
     }
 }

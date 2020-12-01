@@ -366,6 +366,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &696375041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077345351746277833, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084598399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &696375054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696375041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4e051a704bb7e48b970d11c297a153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - "Bienvenido al juego Conejo, and\xE1 a la Academia Tuenti a hablar con tus mentores."
+  - "Aqu\xED est\xE1n los mentores Christian y Xavier, creo que ya se conocen \xBFno?"
+  - "\xA1Bien hecho! Como hiciste el primer curso ahora se habilita un Test en la
+    Maquina."
+  - "\xA1V\xE9 a la Maquina!"
+  - "\xA1Muy Bien! Aprobaste tu primer Test y ahora podes seguir con otro curso."
+  - "\xA1Si hay un curso bloqueado es porque debes aprobar el test anterior!"
+  - "\xBFCrees que puedes vender un chip?"
+  - En la plaza siempre hay posibles clientes para Tuenti, ve a buscarlos!
+  - "\xA1Perfecto! Hiciste tu primer venta. Sigue haciendo cursos y ventas hasta
+    convertirte en un profesional!"
+  - "\xA1Maravilloso, subiste de rango! Te queda seguir avanzando hasta ser un experto."
+  tutorialID: 0
 --- !u!1 &760326759
 GameObject:
   m_ObjectHideFlags: 0
