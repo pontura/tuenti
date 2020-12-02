@@ -14382,7 +14382,7 @@ MonoBehaviour:
   - {fileID: 597168955}
   - {fileID: 59255936}
   - {fileID: 1809724849}
-  limits: {x: 4, y: 3.5}
+  limits: {x: 3, y: 3.5}
   isCity: 0
 --- !u!4 &1648941241
 Transform:
@@ -16237,7 +16237,7 @@ MonoBehaviour:
   - {fileID: 54711473}
   - {fileID: 118467238}
   - {fileID: 1241121289}
-  limits: {x: 5, y: 7}
+  limits: {x: 5, y: 6.5}
   isCity: 1
 --- !u!4 &1929057195
 Transform:
