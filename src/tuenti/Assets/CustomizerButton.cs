@@ -13,7 +13,11 @@ public class CustomizerButton : MonoBehaviour
         Button b = gameObject.GetComponent<Button>();
         b.onClick.AddListener(delegate () { OnClicked(); });
         bool isLocked;
-        if (part.partID == -1)
+        if (part.partID == -1 
+            || part.type == CharacterCustomizer.Types.COLOR_PANTAS
+            || part.type == CharacterCustomizer.Types.COLOR_REMES
+            || part.type == CharacterCustomizer.Types.COLOR_ZAPAS
+            )
             isLocked = false;
         else
             isLocked = Data.Instance.userData.IsCostumizationLocked(part.type, part.partID);

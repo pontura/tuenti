@@ -16,6 +16,9 @@ public class Settings : MonoBehaviour
     public Color costumerDoneColor;
     public Color costumerIdleColor;
 
+    public Color[] remerasColor;
+    public Color[] pantalonesColor;
+    public Color[] zapasColor;
 
     public List<int> GetCursosIdByLevel()
     {
