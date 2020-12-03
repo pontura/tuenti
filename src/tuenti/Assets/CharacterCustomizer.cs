@@ -75,7 +75,7 @@ public class CharacterCustomizer : MonoBehaviour
         foreach (GameObject go in GetPart(type).all)
             go.GetComponent<Image>().color = GetColorFor(type, setNext);  
     }
-    Color GetColorFor(Types type, bool setNext)
+    public Color GetColorFor(Types type, bool setNext)
     {
         switch (type)
         {

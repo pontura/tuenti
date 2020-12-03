@@ -517,6 +517,9 @@ MonoBehaviour:
   speed: 2
   limits: {x: 4, y: 8}
   walking: 0
+  remes: []
+  pantas: []
+  zapas: []
   id: 0
   pathID: 0
   paths:
@@ -827,6 +830,9 @@ MonoBehaviour:
   speed: 2
   limits: {x: 4, y: 8}
   walking: 0
+  remes: []
+  pantas: []
+  zapas: []
   id: 0
   pathID: 0
   paths:
@@ -2630,7 +2636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359124400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1764516947}
@@ -3968,7 +3974,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3718006882837566461}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671077020}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0171752fcb6682c4eb26cf7f54a76bcf, type: 3}
@@ -4282,7 +4288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612932652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1388479091}
@@ -5994,7 +6000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895415816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1764516947}
@@ -12083,7 +12089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205650538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1722760800}
@@ -12452,6 +12458,9 @@ MonoBehaviour:
   speed: 2
   limits: {x: 4, y: 8}
   walking: 0
+  remes: []
+  pantas: []
+  zapas: []
   id: 0
   pathID: 0
   paths:
@@ -13519,7 +13528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392968365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1301520672}
@@ -13808,7 +13817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458613223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1388479091}
@@ -15124,42 +15133,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &1671077020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3718006883259125002, guid: 2b7c241e7210b594b84f4f89a252ca42,
-    type: 3}
-  m_PrefabInstance: {fileID: 3718006882837566461}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1671077021
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671077020}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!136 &1671077022
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671077020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1685331453
 GameObject:
   m_ObjectHideFlags: 0
@@ -15731,7 +15704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732128469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1722760800}
@@ -18660,7 +18633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134819114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.8}
+  m_LocalPosition: {x: -0.006, y: 0.133, z: -0.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1301520672}
@@ -20657,54 +20630,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 247258664}
     m_Modifications:
-    - target: {fileID: 503666048, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.r
-      value: 0.2784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 503666048, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.g
-      value: 0.23137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 503666048, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6313726
-      objectReference: {fileID: 0}
-    - target: {fileID: 606805166, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.r
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 606805166, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.g
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 606805166, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.b
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 697521426, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.r
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 697521426, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.g
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 697521426, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.b
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472455268, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.r
-      value: 0.2784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472455268, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.g
-      value: 0.23137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472455268, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6313726
-      objectReference: {fileID: 0}
     - target: {fileID: 3718006883259124996, guid: 2b7c241e7210b594b84f4f89a252ca42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20760,24 +20685,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3718006883259124997, guid: 2b7c241e7210b594b84f4f89a252ca42,
-        type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3718006883259124997, guid: 2b7c241e7210b594b84f4f89a252ca42,
-        type: 3}
-      propertyPath: limits.y
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 3718006883259125002, guid: 2b7c241e7210b594b84f4f89a252ca42,
         type: 3}
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3718006882235122950, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
-    - {fileID: 3718006882235122949, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7c241e7210b594b84f4f89a252ca42, type: 3}
 --- !u!1 &3836425759037937819
 GameObject:
@@ -20894,6 +20807,9 @@ MonoBehaviour:
   speed: 2
   limits: {x: 4, y: 8}
   walking: 0
+  remes: []
+  pantas: []
+  zapas: []
   id: 0
   pathID: 0
   paths:

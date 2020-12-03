@@ -10,10 +10,33 @@ public class Character : MonoBehaviour
     public bool walking;
     bool goLeft;
 
+    public SpriteRenderer[] remes;
+    public SpriteRenderer[] pantas;
+    public SpriteRenderer[] zapas;
+
     void Awake()
     {
         goLeft = true;
         anim = GetComponent<Animator>();
+        Events.OnCustomize += OnCustomize;
+        OnCustomize(CharacterCustomizer.Types.COLLARS, 0); //solo fuerza a inicio:
+    }
+    private void OnDestroy()
+    {
+        Events.OnCustomize -= OnCustomize;
+    }
+    void OnCustomize(CharacterCustomizer.Types t , int id)
+    {
+        Color c_remes = Data.Instance.settings.remerasColor[PlayerPrefs.GetInt(CharacterCustomizer.Types.COLOR_REMES.ToString(), 0)];
+        Color c_panta = Data.Instance.settings.pantalonesColor[PlayerPrefs.GetInt(CharacterCustomizer.Types.COLOR_PANTAS.ToString(), 0)];
+        Color c_zapa = Data.Instance.settings.zapasColor[PlayerPrefs.GetInt(CharacterCustomizer.Types.COLOR_ZAPAS.ToString(), 0)];
+
+        foreach (SpriteRenderer sr in remes)
+            sr.color = c_remes;
+        foreach (SpriteRenderer sr in pantas)
+            sr.color = c_panta;
+        foreach (SpriteRenderer sr in zapas)
+            sr.color = c_zapa;
     }
     public void Idle()
     {
@@ -25,6 +48,7 @@ public class Character : MonoBehaviour
         anim.Play("walk");
         walking = true;
     }
+
     public void MoveTo(float x, float y)
     {
         if ((transform.localPosition.x < -limits.x && x<0) || (transform.localPosition.x > limits.x && x > 0))

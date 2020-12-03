@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Customizer : UIPanelScreen
 {
+    public CharacterCustomizer characterCustomizer;
     public void SetOn()
     {
         Init();

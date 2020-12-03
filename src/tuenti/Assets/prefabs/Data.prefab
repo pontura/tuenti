@@ -5510,6 +5510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1104228208400386320}
+  characterCustomizer: {fileID: 2084598384}
 --- !u!114 &696375054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,6 +8910,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1025903049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2084598384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1097235385, guid: 6a3daeb4ef3983c42b954a8f39784f68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1025903049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1dc075ce8caf44eaa8bf078fbb7b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1926588624
 PrefabInstance:
   m_ObjectHideFlags: 0
