@@ -31,6 +31,7 @@ public class MapZone : MonoBehaviour
         Game.Instance.character.limits = limits;
         if (isCity)
         {
+            Data.Instance.GetComponent<Books>().CheckToAddBookToScene();
             switch (Data.Instance.lastScene)
             {
                 case "Ventas":

@@ -820,6 +820,53 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[3].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[3].level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[3].containerID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[3].thumb
+      value: 
+      objectReference: {fileID: 21300000, guid: 60f1e7e6f0643cd4eb45cffe671bd377,
+        type: 3}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[4].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[4].level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[4].containerID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016142966170837542, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: all.Array.data[4].thumb
+      value: 
+      objectReference: {fileID: 21300000, guid: 60f1e7e6f0643cd4eb45cffe671bd377,
+        type: 3}
     - target: {fileID: 2103812868599385321, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
         type: 3}
       propertyPath: m_AnchorMin.y
