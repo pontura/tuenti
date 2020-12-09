@@ -19,13 +19,17 @@ public class Character : MonoBehaviour
         goLeft = true;
         anim = GetComponent<Animator>();
         Events.OnCustomize += OnCustomize;
-        OnCustomize(CharacterCustomizer.Types.COLLARS, 0); //solo fuerza a inicio:
+        Delayed();
     }
     private void OnDestroy()
     {
         Events.OnCustomize -= OnCustomize;
     }
-    void OnCustomize(CharacterCustomizer.Types t , int id)
+    void OnCustomize(CharacterCustomizer.Types t, int id)
+    {
+        Invoke("Delayed", 0.1f);
+    }
+    void Delayed()
     {
         Color c_remes = Data.Instance.settings.remerasColor[PlayerPrefs.GetInt(CharacterCustomizer.Types.COLOR_REMES.ToString(), 0)];
         Color c_panta = Data.Instance.settings.pantalonesColor[PlayerPrefs.GetInt(CharacterCustomizer.Types.COLOR_PANTAS.ToString(), 0)];
