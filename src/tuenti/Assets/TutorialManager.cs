@@ -32,7 +32,7 @@ public class TutorialManager : MonoBehaviour
     }
     public void OnCursoDone()
     {
-        if (tutorialID == 2) Invoke("SetOn", 1f);
+        if (tutorialID == 2 && Data.Instance.userData.cursosDone.Count>=2) Invoke("SetOn", 1f);
     }
     public void OnTestDone()
     {
