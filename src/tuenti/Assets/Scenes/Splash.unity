@@ -577,6 +577,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7863017967886043976, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_Text
+      value: Saltar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957704541744896782, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957704541744896782, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957704541744896782, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 270.57727
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957704541744896782, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 335.38617
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957704541744896782, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.39059514
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
 --- !u!1 &2129607344
