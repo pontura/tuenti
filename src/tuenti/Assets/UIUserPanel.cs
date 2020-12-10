@@ -20,6 +20,7 @@ public class UIUserPanel : UIPanelScreen
 
     public void OnInit()
     {
+       
         debugField.text = "";
         dniField.text = "";
         Init();

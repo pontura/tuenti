@@ -14,6 +14,8 @@ public class UserData : MonoBehaviour
     public int level;
     public int ventas;
     public int curso_id;
+    public int score;
+
     int totalBooks = 6;
 
     public List<int> cursosDone;
@@ -139,9 +141,13 @@ public class UserData : MonoBehaviour
                 return true;
         return false;
     }
-
+    void DelayedSaveToServer()
+    {
+        Data.Instance.databaseManager.SaveScore();
+    }
     public void CheckToUnlockLevel()
     {
+        Invoke("DelayedSaveToServer", 1);
         int levelID = 0;
         int id = 0;
         int totalLevels = 0;

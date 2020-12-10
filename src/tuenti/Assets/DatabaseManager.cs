@@ -206,7 +206,8 @@ public class DatabaseManager : MonoBehaviour
         yield return www;
         if (www.error == null)
         {
-            OnDone(www.text);
+            if(OnDone != null)
+                OnDone(www.text);
         }
         else
         {
@@ -319,6 +320,16 @@ public class DatabaseManager : MonoBehaviour
             if (data.curso_id == id)
                 arr.Add(data);
         return arr;
+    }
+    public void SaveScore()
+    {
+        string dni = Data.Instance.userData.dni;
+        int score = GetTotalStars();
+        int level = Data.Instance.userData.level;
+        string hash = Md5Test.Md5Sum(Data.Instance.userData.dni + score + "pontura");
+        string urlReal = url + "setUser.php?dni=" + dni + "&score=" + score + "&level=" + level + "&hash=" + hash;
+        print("save: " + urlReal);
+        StartCoroutine(LoadJson(urlReal, null));
     }
     public int GetTotalStars()
     {
