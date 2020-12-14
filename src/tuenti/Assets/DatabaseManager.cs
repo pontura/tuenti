@@ -12,7 +12,7 @@ public class DatabaseManager : MonoBehaviour
     public TestsData testsData;
     public AnswersData answwersData;
     public VentasData ventasData;
-    
+    public RankingData rankingData;
 
     [Serializable] public class CursosData  {
         public CursoData[] all;
@@ -35,10 +35,23 @@ public class DatabaseManager : MonoBehaviour
         public MultiplechoiceData[] all;
     }
     [Serializable]
+    public class RankingData
+    {
+        public RankingDataLine[] all;
+    }
+
+    [Serializable]
     public class VentasData
     {
         public int lastPlayedID;
         public VentaData[] all;
+    }
+
+    [Serializable]
+    public class RankingDataLine
+    {
+        public string nombre;
+        public int score;
     }
    
     [Serializable] public class CursoData
@@ -133,6 +146,15 @@ public class DatabaseManager : MonoBehaviour
 
     }
     public void Init()
+    {
+        StartCoroutine(LoadJson(url + "getHiscore.php", OnScoreDone));
+    }
+    void OnScoreDone(string data)
+    {
+        rankingData = JsonUtility.FromJson<RankingData>(data);
+        GetUser();
+    }
+    public void GetUser()
     {
         StartCoroutine(LoadJson(url + "getUser.php?dni=" + Data.Instance.userData.dni, OnUserDataDone));
     }

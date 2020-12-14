@@ -219,4 +219,8 @@ public class UserData : MonoBehaviour
         }
         return locked;
     }
+    public void OnOpenHiscore()
+    {
+        Data.Instance.GetComponent<RankingUI>().Init();
+    }
 }
