@@ -15,9 +15,14 @@ public class Boss : MonoBehaviour
         if (other.tag == "Player")
         {
             if (isOn)
-                return;
+                Events.OnConfirmation("Felicitaciones, estás listo para el test final", Talked);
             else
-                Events.OnConfirmation("Cuando termines todos los test, te tomaré la prueba final", null);
+                Events.OnConfirmation("¡Pana! Todavía no estás listo para verme. Cuando termines todos los cursos, ahí te puedes acercar para tomar el test final.", null);
         }
+    }
+    void Talked()
+    {
+        Data.Instance.userData.Talk_Samuel();
+        Game.Instance.GotoTests();
     }
 }

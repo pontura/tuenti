@@ -11,9 +11,13 @@ public class TestsOld : UIScrollItemsScreen
         int id = 0;
         foreach (DatabaseManager.CursoData d in Data.Instance.databaseManager.cursosData.all)
         {
+            bool forceActive = false;
+            if (d.id == 28 && Data.Instance.userData.talked_to_samuel == 0)
+                return;
+            else if (d.id == 28 && Data.Instance.userData.talked_to_samuel == 1)
+                forceActive = true;
             if (id > 0)
-            {
-                bool forceActive = false;
+            {                
                 if (id < 2)
                     forceActive = true;
                 UITestButton newButton = (UITestButton)AddItem();

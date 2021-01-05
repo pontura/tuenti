@@ -47,6 +47,8 @@ public class CursosUI : UIScrollItemsScreen
 
         foreach (DatabaseManager.CursoData cursoData in Data.Instance.databaseManager.cursosData.all)
         {
+            if (cursoData.id == 28)
+                return;
             UICursoButton newButton = (UICursoButton)AddItem();
             bool forceUnBlock = false;
             
