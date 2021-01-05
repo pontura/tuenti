@@ -1104,7 +1104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -21.599998, y: 128.01001}
+  m_AnchoredPosition: {x: -21.599976, y: 128.01001}
   m_SizeDelta: {x: 6, y: 257.26312}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &846644036
@@ -3317,7 +3317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -37.770004, y: 1.3751221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096936221
@@ -3661,6 +3661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UITriviaButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5510913361000970201, guid: 6466b9b10ae57cb479a53b3355d72c69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3719,12 +3724,12 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 145.79901
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -123.95
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
@@ -3744,7 +3749,7 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
@@ -3754,7 +3759,7 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: 6466b9b10ae57cb479a53b3355d72c69,
         type: 3}
@@ -3780,6 +3785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICursoContentButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5510913361000970201, guid: cd1b68150d61fe443bbabe6f0cbdfac6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: cd1b68150d61fe443bbabe6f0cbdfac6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3838,12 +3848,12 @@ PrefabInstance:
     - target: {fileID: 6625396491314468110, guid: cd1b68150d61fe443bbabe6f0cbdfac6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 145.79901
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: cd1b68150d61fe443bbabe6f0cbdfac6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -42.9
       objectReference: {fileID: 0}
     - target: {fileID: 6625396491314468110, guid: cd1b68150d61fe443bbabe6f0cbdfac6,
         type: 3}
