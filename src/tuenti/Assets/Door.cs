@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public types type;
+    public Sprite sprite;
+
     public enum types
     {
         TO_ACADEMY,
@@ -18,11 +20,11 @@ public class Door : MonoBehaviour
             switch(type)
             {
                 case types.TO_ACADEMY:
-                    Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_academy, Goto);  break;
+                    Events.OnConfirmationImage(Data.Instance.textsManager.texts.all.door_to_academy, sprite, Goto);  break;
                 case types.TO_CITY:
                     Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_city, Goto);  break;
                 case types.TO_HOME:
-                    Events.OnConfirmation(Data.Instance.textsManager.texts.all.door_to_home, Goto);                       
+                    Events.OnConfirmationImage(Data.Instance.textsManager.texts.all.door_to_home, sprite, Goto);                       
                     break;
             }            
         }

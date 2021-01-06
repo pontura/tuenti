@@ -6,7 +6,8 @@ using System;
 public class UserData : MonoBehaviour
 {
     public bool isLogged;
-  
+    public int talked_to_samuel;
+
     public string username;
     public string dni;
     public int curso_active_id;
@@ -41,6 +42,7 @@ public class UserData : MonoBehaviour
         for(int a=0; a< totalBooks; a++)
             books.Add(PlayerPrefs.GetInt("book_" + a, 0));
 
+        talked_to_samuel = PlayerPrefs.GetInt("talked_to_samuel"); 
         username = PlayerPrefs.GetString("username");
         dni = PlayerPrefs.GetString("dni");
         level = PlayerPrefs.GetInt("level", 0);
@@ -56,6 +58,10 @@ public class UserData : MonoBehaviour
         }
 
         GetComponent<Books>().Init(books);
+    }
+    public void Talk_Samuel()
+    {
+        PlayerPrefs.SetInt("talked_to_samuel", 1);
     }
     public bool IsLogged()
     {

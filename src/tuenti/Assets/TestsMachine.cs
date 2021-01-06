@@ -8,7 +8,7 @@ public class TestsMachine : MonoBehaviour
     private void Start()
     {
       
-        if (Data.Instance.userData.curso_id == 0)
+        if (Data.Instance.userData.cursosDone.Count<2)
             isOff = true;
         if(isOff)
         {
