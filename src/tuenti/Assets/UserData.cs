@@ -116,7 +116,6 @@ public class UserData : MonoBehaviour
         level++;
         Data.Instance.tutorialManager.OnLevelUp();
         PlayerPrefs.SetInt("level", level);
-        Events.OnConfirmation("¡Felicitaciones!, ahora sos " + Data.Instance.settings.levels[level].name, null);
     }
 
     public string GetLevelName()

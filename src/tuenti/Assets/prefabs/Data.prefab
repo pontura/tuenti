@@ -6836,15 +6836,15 @@ MonoBehaviour:
     con tus mentores.
   - "Si hay cursos bloqueados es porque no has aprobado o realizado un test en la
     m\xE1quina."
-  - "\xBFEstas listo para hacer una venta? "
+  - "\xA1Subiste de nivel! Sigue prepar\xE1ndote con tus mentores para aprobar el
+    test final con Samuel. "
+  - "\xBFEstas listo para hacer una venta?"
   - "En la ciudad siempre hay posibles clientes para Tuenti. \xA1Anda a buscarlos
     y pasalos a Tuenti!"
   - "\xA1Incre\xEDble! Realizaste tu primer Venta. Sigue prepar\xE1ndote con tus
     mentores para lograr m\xE1s ventas porque se van a poner cada vez m\xE1s dif\xEDciles
     ;)"
-  - "\xA1Subiste de nivel! Sigue prepar\xE1ndote con tus mentores para aprobar el
-    test final con Samuel. "
-  - Ve a tu casa a elegir entre tus nuevos looks
+  - Ve a tu casa o toca el icono de Conejo para elegir entre tus nuevos looks
   - "\xA1Terminaste los cursos! Est\xE1s listo para el test final con Samuel. "
   tutorialID: 0
   sprites:
@@ -6855,8 +6855,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a6b37269321a3414dae1b17b1c77115b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 21300000, guid: 94b7907db63c15e4fb410046f9185377, type: 3}
   - {fileID: 0}
+  - {fileID: 21300000, guid: 94b7907db63c15e4fb410046f9185377, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: c693be41fc5798b40872890d8b8f2773, type: 3}
   - {fileID: 21300000, guid: c31d56b96fe52304aadd693d23bd029d, type: 3}

@@ -23,32 +23,36 @@ public class TutorialManager : MonoBehaviour
     }
     void OnDone()
     {
-        if (tutorialID == 3 || tutorialID == 5 || tutorialID == 7 || tutorialID == 10)
+        if (tutorialID == 3 || tutorialID == 5 || tutorialID == 7 || tutorialID == 8)
             Invoke("SetOn", 0.5f);
     }
     public void OnEnterCity()
     {
-        if (tutorialID == 0 || tutorialID == 6) Invoke("SetOn", 1f);
+        if (tutorialID == 0) Invoke("SetOn", 0.7f);
     }
     public void OnEnterAcademy()
     {
-        if (tutorialID == 1) Invoke("SetOn", 1f);
+        if (tutorialID == 1) Invoke("SetOn", 0.7f);
     }
     public void OnCursoDone()
     {
-        if (tutorialID == 2 && Data.Instance.userData.cursosDone.Count>=2) Invoke("SetOn", 1f);
+        if (tutorialID == 2 && Data.Instance.userData.cursosDone.Count>=2) Invoke("SetOn", 0.7f);
         if (tutorialID == 11 && Data.Instance.userData.cursosDone.Count >= Data.Instance.databaseManager.cursosData.all.Length) Invoke("SetOn", 1f);
     }
     public void OnTestDone()
     {
-        if (tutorialID == 4) Invoke("SetOn", 1f);
+        if (tutorialID == 4) Invoke("SetOn", 0.7f);
     }
     public void OnVentaDone()
     {
-        if (tutorialID == 8) Invoke("SetOn", 1f);
+        if (tutorialID == 9) Invoke("SetOn", 0.7f);
     }
     public void OnLevelUp()
     {
-        if (tutorialID == 9) Invoke("SetOn", 1f);
+        if (tutorialID == 6)
+            Invoke("SetOn", 0.7f);
+        else
+            Events.OnConfirmation("¡Felicitaciones!, ahora sos " + Data.Instance.settings.levels[Data.Instance.userData.level].name, OnDone);
+        
     }
 }
