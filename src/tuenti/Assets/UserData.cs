@@ -61,6 +61,7 @@ public class UserData : MonoBehaviour
     }
     public void Talk_Samuel()
     {
+        talked_to_samuel = 1;
         PlayerPrefs.SetInt("talked_to_samuel", 1);
     }
     public bool IsLogged()
@@ -112,10 +113,11 @@ public class UserData : MonoBehaviour
         dni = _dni;
     }
     public void SetLevelUp()
-    {
+    {        
         level++;
         Data.Instance.tutorialManager.OnLevelUp();
         PlayerPrefs.SetInt("level", level);
+        print("SetLevelUp " + level);
     }
 
     public string GetLevelName()
@@ -154,26 +156,37 @@ public class UserData : MonoBehaviour
     {
         Invoke("DelayedSaveToServer", 1);
         int levelID = 0;
-        int id = 0;
-        int totalLevels = 0;
+        int to = 0;
+        List<DatabaseManager.CursoData> cursos = new List<DatabaseManager.CursoData>();
+
+        print("1 _______________________");
         foreach (Settings.LevelData levelData in Data.Instance.settings.levels)
         {
-            totalLevels = levelData.totalCursos;
-            foreach (DatabaseManager.CursoData d in Data.Instance.databaseManager.cursosData.all)
+           
+            int from = to;
+            to += levelData.totalCursos;
+            int curso_id = 0;
+            if (levelID == level)
             {
-                if (level == levelID)
+                int cursoOkCount = 0;
+                foreach (DatabaseManager.CursoData cursoData in Data.Instance.databaseManager.cursosData.all)
                 {
-                    print("id: " + id + "   levelID: " + levelID + "   totalLevels: " + totalLevels + "   d.test_score: " + d.test_score + "   level: " + level);
-                    if (levelID == 0 && id == 0)
-                        print("first level");
-                    else if (id < totalLevels && d.test_score == 0)
-                        return;                    
-                    id++;
+                    if (curso_id >= from && curso_id < to)
+                    {                     
+                        if (cursoData.test_score > 0 || cursoData.id == 5) // si es el primero:
+                            cursoOkCount++;
+
+                        //print("Level  " + level + "  cuyrsoid: " + cursoData.id + "  cursoOkCount:" + cursoOkCount + "  totalCursos: " + levelData.totalCursos);
+
+                        if (cursoOkCount >= levelData.totalCursos)
+                            SetLevelUp();
+                    }
+                    curso_id++;
                 }
             }
             levelID++;
         }
-        SetLevelUp();
+        
     }
     public string GetLevelUnlockConditionTitle(int levelID)
     {

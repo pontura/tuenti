@@ -362,23 +362,30 @@ public class DatabaseManager : MonoBehaviour
     }
     public bool IsCursoLocked(int curso_id)
     {
-        int id = 0;
-        int level = Data.Instance.userData.level;
-        foreach (CursoData c in cursosData.all)
+        if (Data.Instance.userData.level == 0 && Data.Instance.userData.cursosDone.Count == 0 && curso_id != 5)
+            return true;
+
+        int levelID = 0;
+        int to = 0;
+        foreach (Settings.LevelData levelData in Data.Instance.settings.levels)
         {
-            if (c.id == curso_id)
+            to += levelData.totalCursos;
+            int cursoNum = 0;
+            if (levelID == Data.Instance.userData.level)
             {
-                if (level == 0)
+                foreach (DatabaseManager.CursoData cursoData in Data.Instance.databaseManager.cursosData.all)
                 {
-                    if (id == 0) return false; else return true;
-                }
-                else if (level == 1)
-                {
-                    if (id < 4) return false; else return true;
+                    if (cursoNum < to)
+                    {
+                        if (cursoData.id == curso_id)
+                            return false;
+                    }
+                    cursoNum++;
                 }
             }
-            id++;
+            levelID++;
         }
+        print(levelID + "       to " + to + "       curso_id " + curso_id);
         return true;
     }
 }

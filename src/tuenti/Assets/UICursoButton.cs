@@ -17,8 +17,12 @@ public class UICursoButton : UIButton
         this.data = data;
         field.text = data.nombre;
         bool isLocked = Data.Instance.databaseManager.IsCursoLocked(data.id);
+
         if (forceUnBlock)
             isLocked = false;
+
+
+
         locked.SetActive(isLocked);
         if (isLocked)
             GetComponent<Button>().interactable = false;
