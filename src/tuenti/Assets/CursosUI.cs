@@ -56,7 +56,6 @@ public class CursosUI : UIScrollItemsScreen
                 forceUnBlock = true;
            
             id++;
-
           
 
             newButton.OnInit(cursoData, forceUnBlock);
