@@ -6832,8 +6832,8 @@ MonoBehaviour:
     no?"
   - "\xA1Muy bien! Como has terminado tu primer curso, hay un test en la m\xE1quina."
   - "\xA1Anda a la m\xE1quina!"
-  - Que bien! Haz aprobado tu primer test. Ahora puedes seguir con el resto de cursos
-    con tus mentores.
+  - "\xA1Que bien! Haz aprobado tu primer test. Ahora puedes seguir con el resto
+    de cursos con tus mentores."
   - "Si hay cursos bloqueados es porque no has aprobado o realizado un test en la
     m\xE1quina."
   - "\xA1Subiste de nivel! Sigue prepar\xE1ndote con tus mentores para aprobar el
@@ -6846,6 +6846,8 @@ MonoBehaviour:
     ;)"
   - Ve a tu casa o toca el icono de Conejo para elegir entre tus nuevos looks
   - "\xA1Terminaste los cursos! Est\xE1s listo para el test final con Samuel. "
+  - Cada vez que subas de nivel te esconderemos libros por la ciudad, su contenido
+    es de vital importancia que lo sepas.
   tutorialID: 0
   sprites:
   - {fileID: 21300000, guid: d352077c7227db940a681bee2bccd5a9, type: 3}
