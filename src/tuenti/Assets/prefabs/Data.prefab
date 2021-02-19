@@ -6846,8 +6846,9 @@ MonoBehaviour:
     ;)"
   - Ve a tu casa o toca el icono de Conejo para elegir entre tus nuevos looks
   - "\xA1Terminaste los cursos! Est\xE1s listo para el test final con Samuel. "
-  - Cada vez que subas de nivel te esconderemos libros por la ciudad, su contenido
-    es de vital importancia que lo sepas.
+  - Cada vez que subas de nivel te esconderemos libros por la ciudad, es de vital
+    importancia que los encuentres.
+  - "Cuando termines todos los test tendr\xE1s que ir con Samuel para tu prueba final."
   tutorialID: 0
   sprites:
   - {fileID: 21300000, guid: d352077c7227db940a681bee2bccd5a9, type: 3}
@@ -6861,6 +6862,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 94b7907db63c15e4fb410046f9185377, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: c693be41fc5798b40872890d8b8f2773, type: 3}
+  - {fileID: 21300000, guid: c31d56b96fe52304aadd693d23bd029d, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: c31d56b96fe52304aadd693d23bd029d, type: 3}
 --- !u!114 &716858051
 MonoBehaviour:
