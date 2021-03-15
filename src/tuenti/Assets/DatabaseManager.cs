@@ -5,7 +5,8 @@ using System;
 
 public class DatabaseManager : MonoBehaviour
 {
-    string url = "http://www.pontura.com/tuenti/";
+    string url = "http://tuentiadmin.xyz/";
+  //  string url = "http://www.pontura.com/tuenti/";
     public bool allLoaded;
     public CursosData cursosData;
     public MultiplechoicesData multiplechoiceData;

@@ -23,12 +23,13 @@ public class TutorialManager : MonoBehaviour
     }
     void OnDone()
     {
-        if (tutorialID == 3 || tutorialID == 5 || tutorialID == 7 || tutorialID == 8)
+        if (tutorialID == 3 || tutorialID == 5 || tutorialID == 7 || tutorialID == 8 || tutorialID == 10)
             Invoke("SetOn", 0.5f);
     }
     public void OnEnterCity()
     {
-        if (tutorialID == 0) Invoke("SetOn", 0.7f);
+        if (tutorialID == 0 || tutorialID == 11)
+            Invoke("SetOn", 0.7f);
     }
     public void OnEnterAcademy()
     {
@@ -37,7 +38,7 @@ public class TutorialManager : MonoBehaviour
     public void OnCursoDone()
     {
         if (tutorialID == 2 && Data.Instance.userData.cursosDone.Count>=2) Invoke("SetOn", 0.7f);
-        if (tutorialID == 11 && Data.Instance.userData.cursosDone.Count >= Data.Instance.databaseManager.cursosData.all.Length) Invoke("SetOn", 1f);
+        if (tutorialID == 12 && Data.Instance.userData.cursosDone.Count >= Data.Instance.databaseManager.cursosData.all.Length) Invoke("SetOn", 1f);
     }
     public void OnTestDone()
     {

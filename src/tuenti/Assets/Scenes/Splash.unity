@@ -128,6 +128,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: texts.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: sprites.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: texts.Array.data[12]
+      value: "\xA1Terminaste los cursos! Est\xE1s listo para el test final con Samuel. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: texts.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: texts.Array.data[11]
+      value: Cada vez que subas de nivel te esconderemos libros por la ciudad, su
+        contenido es de vital importancia que lo sepas.
+      objectReference: {fileID: 0}
+    - target: {fileID: 696375054, guid: 7edde34abdbd5904caf1ed9f8d6363e2, type: 3}
+      propertyPath: sprites.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1077345351746277833, guid: 7edde34abdbd5904caf1ed9f8d6363e2,
         type: 3}
       propertyPath: m_Name
